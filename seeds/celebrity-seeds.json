@@ -1,0 +1,12 @@
+[
+{
+  "model": "celebrities.celebrity",
+  "pk": 1,
+  "fields": {
+    "name": "Sara Sampaio",
+    "year": 2023,
+    "cover_image": "sara-sampaio-at-altuzarra-ss2024-ready-to-wear-collection-show-in-new-york-09-11-2023-4.jpg",
+    "likes": 0
+  }
+}
+]

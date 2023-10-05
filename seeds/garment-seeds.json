@@ -1,0 +1,12 @@
+[
+{
+  "model": "garments.garment",
+  "pk": 1,
+  "fields": {
+    "title": "Dress",
+    "brand": "Chanel",
+    "price": 40,
+    "garments": ""
+  }
+}
+]
