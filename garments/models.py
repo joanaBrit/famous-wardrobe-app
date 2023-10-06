@@ -2,10 +2,10 @@ from django.db import models
 
 # Model
 class Garment(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=200)
     brand = models.CharField(max_length=50)
     price = models.PositiveIntegerField()
-    garments = models.ImageField(blank=True)
+    garments = models.ImageField(blank=True, max_length=200)
     
 
 

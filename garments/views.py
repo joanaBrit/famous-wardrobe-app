@@ -14,6 +14,7 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 class GarmentListView(ListCreateAPIView):
     queryset = Garment.objects.all()
     serializer_class = GarmentSerializer
+    
 # Update, Delete garments
 class GarmentDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Garment.objects.all()

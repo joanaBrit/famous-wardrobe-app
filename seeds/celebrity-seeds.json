@@ -5,7 +5,147 @@
   "fields": {
     "name": "Sara Sampaio",
     "year": 2023,
-    "cover_image": "sara-sampaio-at-altuzarra-ss2024-ready-to-wear-collection-show-in-new-york-09-11-2023-4.jpg",
+    "cover_image": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696600106/Project-4/sara-sampaio-2023_fxkobp.jpg",
+    "likes": 0
+  }
+},
+{
+  "model": "celebrities.celebrity",
+  "pk": 2,
+  "fields": {
+    "name": "Kendall Jenner",
+    "year": 2023,
+    "cover_image": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529773/Project-4/Kendall_Jenner_2023_vbhsxz.webp",
+    "likes": 0
+  }
+},
+{
+  "model": "celebrities.celebrity",
+  "pk": 3,
+  "fields": {
+    "name": "ASAP Rocky",
+    "year": 2023,
+    "cover_image": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529585/Project-4/Asap_Rocky_2023_jjfjwo.jpg",
+    "likes": 0
+  }
+},
+{
+  "model": "celebrities.celebrity",
+  "pk": 4,
+  "fields": {
+    "name": "Gigi Hadid",
+    "year": 2023,
+    "cover_image": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529682/Project-4/GiGi_Hadid_s_2023_iq70m3.webp",
+    "likes": 0
+  }
+},
+{
+  "model": "celebrities.celebrity",
+  "pk": 5,
+  "fields": {
+    "name": "Lewis Hamilton",
+    "year": 2023,
+    "cover_image": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529886/Project-4/Lewis-Hamilton_2023_tourrm.webp",
+    "likes": 0
+  }
+},
+{
+  "model": "celebrities.celebrity",
+  "pk": 6,
+  "fields": {
+    "name": "Anne Hathaway",
+    "year": 2023,
+    "cover_image": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529464/Project-4/Anne_Hathaway_2023_s1kqeu.webp",
+    "likes": 0
+  }
+},
+{
+  "model": "celebrities.celebrity",
+  "pk": 7,
+  "fields": {
+    "name": "David Beckham",
+    "year": 2020,
+    "cover_image": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529628/Project-4/David_Beckham_2020_rfh3tn.jpg",
+    "likes": 0
+  }
+},
+{
+  "model": "celebrities.celebrity",
+  "pk": 8,
+  "fields": {
+    "name": "Rihanna",
+    "year": 2020,
+    "cover_image": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591153/Project-4/rihanna-2020_fhnw8l.jpg",
+    "likes": 0
+  }
+},
+{
+  "model": "celebrities.celebrity",
+  "pk": 9,
+  "fields": {
+    "name": "Pharrell Williams",
+    "year": 2019,
+    "cover_image": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591184/Project-4/Pharrell_Williams_2019_ygqzuv.jpg",
+    "likes": 0
+  }
+},
+{
+  "model": "celebrities.celebrity",
+  "pk": 10,
+  "fields": {
+    "name": "Katie Monster",
+    "year": 2018,
+    "cover_image": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591167/Project-4/katie-monster_2018_gcjho0.webp",
+    "likes": 0
+  }
+},
+{
+  "model": "celebrities.celebrity",
+  "pk": 11,
+  "fields": {
+    "name": "Ryan Reynolds",
+    "year": 2022,
+    "cover_image": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591229/Project-4/Ryan_Reynolds_2022_yqrdfk.jpg",
+    "likes": 0
+  }
+},
+{
+  "model": "celebrities.celebrity",
+  "pk": 12,
+  "fields": {
+    "name": "Margot Robbie",
+    "year": 2022,
+    "cover_image": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591305/Project-4/Margot_Robbie_2022_jdbgsq.jpg",
+    "likes": 0
+  }
+},
+{
+  "model": "celebrities.celebrity",
+  "pk": 13,
+  "fields": {
+    "name": "Harry Styles",
+    "year": 2020,
+    "cover_image": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591249/Project-4/harry-styles-2020_rhzuie.jpg",
+    "likes": 0
+  }
+},
+{
+  "model": "celebrities.celebrity",
+  "pk": 14,
+  "fields": {
+    "name": "Leonie Hanne",
+    "year": 2022,
+    "cover_image": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591202/Project-4/Leonie_Hanne_2022_vvzplj.jpg",
+    "likes": 0
+  }
+},
+{
+  "model": "celebrities.celebrity",
+  "pk": 15,
+  "fields": {
+    "name": "Bella Hadid",
+    "year": 2022,
+    "cover_image": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591275/Project-4/Bella_Hadid_2022_xf5af1.jpg",
     "likes": 0
   }
 }
