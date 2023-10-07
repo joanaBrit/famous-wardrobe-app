@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Model
 class Garment(models.Model):
     title = models.CharField(max_length=100)
@@ -9,12 +10,11 @@ class Garment(models.Model):
     celebrity = models.ForeignKey(
         'celebrities.Celebrity',
         related_name='garments',
-        on_delete=models.CASCADE,
-        null=True
+        on_delete=models.CASCADE
     )
     
 
 
 # STR 
     def __str__(self):
-        return self.title
+      return self.title

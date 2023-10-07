@@ -1,0 +1,38 @@
+
+.nave-header {
+  padding: 20px;
+}
+
+.nav-toggle {
+  cursor: pointer;
+  span {
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: rgba(43, 61, 79, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+    background-color: red;
+  }
+}
+
+.modal {
+  width: 300px;
+  position: absolute;
+  height: 100%;
+  box-shadow: 3px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: grey;
+  button {
+    position:absolute;
+    top: 5vw;
+    right: 5vw;
+  }
+  span {
+    cursor: pointer;
+  }
+}
