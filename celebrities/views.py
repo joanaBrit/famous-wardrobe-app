@@ -9,9 +9,13 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import NotFound
 
+# Model
 from .models import Celebrity
 
+# Serializers
 from .serializers.common import CelebritySerializer
+from .serializers.populated import PopulatedCelebritySerializer
+
 
 # EndPoint for view: /celebrities
 class CelebrityListView(APIView):
@@ -53,7 +57,7 @@ class CelebrityDetailView(APIView):
     def get(self, request, id):
       try:
           celebrity = self.get_celebrity(id)
-          serialized_celebrity = CelebritySerializer(celebrity)
+          serialized_celebrity = PopulatedCelebritySerializer(celebrity)
           return Response(serialized_celebrity.data) # you don't need to do like in the documentation data={} because this is the 2 param
       except Exception as e:
           print('Exception', e)

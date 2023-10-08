@@ -5,6 +5,6 @@ from ..models import Celebrity
 # this will allow me to convert the data from db into python datatypes
 
 class CelebritySerializer(serializers.ModelSerializer):
-  class Meta:
-    model = Celebrity
-    fields = '__all__' 
+    class Meta:
+        model = Celebrity
+        fields = '__all__' 

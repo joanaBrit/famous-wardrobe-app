@@ -1,10 +1,10 @@
 from rest_framework import serializers
 from ..models import Garment
 
-# Custom Celebrity Serializer Class
+# Custom Garment Serializer Class
 # this will allow us to convert the date from db into python datatypes
 
 class GarmentSerializer(serializers.ModelSerializer):
-  class Meta:
-    model = Garment
-    fields = '__all__' 
+    class Meta:
+        model = Garment
+        fields = '__all__' 

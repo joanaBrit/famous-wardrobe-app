@@ -1,5 +1,3 @@
-
-
 # Model
 from .models import Garment
 
@@ -8,6 +6,7 @@ from .serializers.common import GarmentSerializer
 
 # Rest Framework
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+
 
 # Class views
 # Get garments
