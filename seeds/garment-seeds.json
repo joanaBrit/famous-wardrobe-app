@@ -1,502 +1,552 @@
 [
-{
-  "model": "garments.garment",
-  "pk": 1,
-  "fields": {
-    "title": "Rhea Dress",
-    "brand": "Altuzarra",
-    "price": 1505,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529946/Project-4/Altuzarra_Rhea-Dress_Bright-Coral-Hand-Dyed_2_960x_crop_center_zmh8uv.webp"
+  {
+    "model": "garments.garment",
+    "pk": 1,
+    "fields": {
+      "title": "Rhea Dress",
+      "brand": "Altuzarra",
+      "price": 1505,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529946/Project-4/Altuzarra_Rhea-Dress_Bright-Coral-Hand-Dyed_2_960x_crop_center_zmh8uv.webp",
+      "celebrity": 1
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 2,
+    "fields": {
+      "title": "Watermill Shoulder Bag",
+      "brand": "Altuzarra",
+      "price": 300,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529948/Project-4/Altuzarra_Watermill-Shoulder-Bag_NaturalBlack_2_960x_crop_center_a1caoz.webp",
+      "celebrity": 1
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 3,
+    "fields": {
+      "title": "Leather Sandals",
+      "brand": "Saint Laurent",
+      "price": 755,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529951/Project-4/eCom-755213AAAZY1000_A_fgrlt9.jpg",
+      "celebrity": 1
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 4,
+    "fields": {
+      "title": "Trench Coat",
+      "brand": "The Row",
+      "price": 4350,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529803/Project-4/slide__9_vn2yz3.webp",
+      "celebrity": 2
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 5,
+    "fields": {
+      "title": "Leather Midi Skirt",
+      "brand": "Alexander McQueen",
+      "price": 3290,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529775/Project-4/P00767896_tqnchq.webp",
+      "celebrity": 2
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 6,
+    "fields": {
+      "title": "Leather Loafers",
+      "brand": "Cos",
+      "price": 135,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529771/Project-4/app001prod_lzvkuh.jpg",
+      "celebrity": 2
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 7,
+    "fields": {
+      "title": "Puffer Jacket",
+      "brand": "Vetements",
+      "price": 2310,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529586/Project-4/image_fh0cow.jpg",
+      "celebrity": 3
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 8,
+    "fields": {
+      "title": "Inch Boot",
+      "brand": "Timberland",
+      "price": 190,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529584/Project-4/10061713-hero_dtqxva.webp",
+      "celebrity": 3
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 9,
+    "fields": {
+      "title": "Baggy Denim Shorts",
+      "brand": "Homeboy",
+      "price": 90,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529588/Project-4/x-tra-monster-gothic-denim-shorts_13_4_l1rsi8.webp",
+      "celebrity": 3
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 10,
+    "fields": {
+      "title": "Pleated Midi Skirt",
+      "brand": "Beare Park",
+      "price": 980,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529682/Project-4/beare-park-dark-grey-pleated-wool-midi-skirt-3_iv6cyd.jpg",
+      "celebrity": 4
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 11,
+    "fields": {
+      "title": "Oversized Leather Jacket",
+      "brand": "Mango",
+      "price": 350,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529679/Project-4/57056020_30_B_cej6om.jpg",
+      "celebrity": 4
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 12,
+    "fields": {
+      "title": "Ballet Leather Flats",
+      "brand": "J.Crew",
+      "price": 143,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529683/Project-4/J.Crew_Zoe_Ballet_Flats_conqq5.webp",
+      "celebrity": 4
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 13,
+    "fields": {
+      "title": "Baseball Cap",
+      "brand": "47 Brand",
+      "price": 25,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529670/Project-4/81_La3RZAvL._AC_UX385__bwwwvu.jpg",
+      "celebrity": 4
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 14,
+    "fields": {
+      "title": "Arque Leather Bag",
+      "brand": "Prada",
+      "price": 1800,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529668/Project-4/232962F048024_1_ummmnm.webp",
+      "celebrity": 4
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 15,
+    "fields": {
+      "title": "Jersey Tank Top",
+      "brand": "Toteme",
+      "price": 85,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529696/Project-4/Screenshot_2023-10-04_211144_qmtsvh.png",
+      "celebrity": 4
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 16,
+    "fields": {
+      "title": "Pleated Pocket Trousers",
+      "brand": "Issey Miyake",
+      "price": 555,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529884/Project-4/homme-plisse-issey-miyake-pleated-pocket-trousers_20550289_47093300_1000_x5hyp7.jpg",
+      "celebrity": 5
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 17,
+    "fields": {
+      "title": "Pleated Gilet",
+      "brand": "Issey Miyake",
+      "price": 420,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529891/Project-4/homme-plisse-issey-miyake-pleated-gilet_20548717_47095227_600_qvlfsy.jpg",
+      "celebrity": 5
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 18,
+    "fields": {
+      "title": "Air Jordan 1 Low G",
+      "brand": "Nike",
+      "price": 130,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529888/Project-4/e2df9f4a-87e9-4fe9-a14f-02e68e132a8a_oap7c8.webp",
+      "celebrity": 5
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 19,
+    "fields": {
+      "title": "Float Corset Blazer",
+      "brand": "Dion Lee",
+      "price": 1380,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529489/Project-4/w460_q80_qon16i.jpg",
+      "celebrity": 6
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 20,
+    "fields": {
+      "title": "Paneled Pants",
+      "brand": "Dion Lee",
+      "price": 1080,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529488/Project-4/w460_q80_1_tr7xsx.jpg",
+      "celebrity": 6
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 21,
+    "fields": {
+      "title": "Sunglasses VE4432U",
+      "brand": "Versace",
+      "price": 243,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529510/Project-4/Screenshot_2023-10-04_215558_wjhsez.png",
+      "celebrity": 6
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 22,
+    "fields": {
+      "title": "Sherpa Trucker Jacket",
+      "brand": "Levi's",
+      "price": 120,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529629/Project-4/202781s4_qovo5t.webp",
+      "celebrity": 7
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 23,
+    "fields": {
+      "title": "Flat Cap",
+      "brand": "Stetson Hats",
+      "price": 79,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529627/Project-4/6433501-372_1_1000x_ddbaca.webp",
+      "celebrity": 7
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 24,
+    "fields": {
+      "title": "Tumbled Leather Boot",
+      "brand": "Yogi",
+      "price": 80,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529640/Project-4/YOGI_AW21Q3_MENS_DYY14007_HITCHTUMBLEDLEATHER_FOOTWEAR_CHESTNUTBROWN_ECOMM1_1024x1024_2x_bzl9v2.webp",
+      "celebrity": 7
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 25,
+    "fields": {
+      "title": "Turtleneck Knit Dress",
+      "brand": "Fenty",
+      "price": 639,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591127/Project-4/slide_2_rchm7i.webp",
+      "celebrity": 7
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 26,
+    "fields": {
+      "title": "Parka Coat",
+      "brand": "Fenty",
+      "price": 1260,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591138/Project-4/98740768_cnnf0t.webp",
+      "celebrity": 8
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 27,
+    "fields": {
+      "title": "Slouchy Boot",
+      "brand": "Paris Texas",
+      "price": 662,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591126/Project-4/ab9c6650f2acd60e8b7993b98492f24c_eipcub.jpg",
+      "celebrity": 8
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 28,
+    "fields": {
+      "title": "Cross Necklace",
+      "brand": "Castafiore",
+      "price": 1472,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591126/Project-4/collier-pendentif-croix-en-platine-et-diamant-657896_fbtgwg.webp",
+      "celebrity": 8
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 29,
+    "fields": {
+      "title": "Straight Fit Jean",
+      "brand": "Ralph Lauren",
+      "price": 365,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591088/Project-4/s7-1357324_lifestyle_y3jkwo.webp",
+      "celebrity": 8
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 30,
+    "fields": {
+      "title": "Long Leather Coat",
+      "brand": "London Leathers Direct",
+      "price": 225,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591104/Project-4/107-Black_1_578x.progressive_uhlbsu.webp",
+      "celebrity": 9
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 31,
+    "fields": {
+      "title": "Square Leather Loafers",
+      "brand": "Martine Rose",
+      "price": 469,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591104/Project-4/18165830_38612511_1000_nx4o7e.webp",
+      "celebrity": 9
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 32,
+    "fields": {
+      "title": "Eiderdown Puffer Coat",
+      "brand": "Let's shop",
+      "price": 42,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591043/Project-4/preen-by-thornton-bregazzi-multicoloured-Eiderdown-Puffer-Coat_lya9r9.jpg",
+      "celebrity": 9
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 33,
+    "fields": {
+      "title": "Millner Sunglasses",
+      "brand": "eOpticians",
+      "price": 21,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591043/Project-4/MI_00208_02_53_nlzduo.webp",
+      "celebrity": 10
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 34,
+    "fields": {
+      "title": "Anime Girl Print Skirt",
+      "brand": "Comme Des Garçons",
+      "price": 994,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591050/Project-4/CCGSKNJS009XJMLX-pdp-1_mp4gwl.jpg",
+      "celebrity": 10
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 35,
+    "fields": {
+      "title": "Leather Jean Jacket",
+      "brand": "TruClothing",
+      "price": 115,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591066/Project-4/Mens-Vintage-Short-Denim-Style-Retro-Real-Suede-Leather-Jean-Jacket-Casual-6_grrvkr.webp",
+      "celebrity": 10
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 36,
+    "fields": {
+      "title": "Flex Trousers",
+      "brand": "Yoox",
+      "price": 47,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591066/Project-4/13951999XS_14_f_h4o0tn.jpg",
+      "celebrity": 11
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 37,
+    "fields": {
+      "title": "Converse One Star",
+      "brand": "Converse",
+      "price": 65,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591066/Project-4/https___bae.hypebeast.com.jpg",
+      "celebrity": 11
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 38,
+    "fields": {
+      "title": "Printstripe Wool Blazer",
+      "brand": "Arket",
+      "price": 75,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591303/Project-4/app006prod_o59vqk.webp",
+      "celebrity": 11
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 39,
+    "fields": {
+      "title": "Cassette Cross-body Bag",
+      "brand": "Bottega Veneta",
+      "price": 2780,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591304/Project-4/bottega-veneta-green-Leather-Plisse-Cassette-Cross-body-Bag_xy8icu.webp",
+      "celebrity": 12
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 40,
+    "fields": {
+      "title": "Leather Pumps",
+      "brand": "N°21",
+      "price": 680,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591302/Project-4/no21-leather-pumps_20167234_45530206_600_hwcej2.webp",
+      "celebrity": 12
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 41,
+    "fields": {
+      "title": "Mid-rise Corduroy Trousers",
+      "brand": "Dolce & Gabbana",
+      "price": 595,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591249/Project-4/P00667247_m0rxia.webp",
+      "celebrity": 12
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 42,
+    "fields": {
+      "title": "Wool-twill Jacket",
+      "brand": "Bode",
+      "price": 1599,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591248/Project-4/image_a0vmlz.jpg",
+      "celebrity": 13
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 43,
+    "fields": {
+      "title": "Straight-leg Tailored Trousers",
+      "brand": "Loulou Studio",
+      "price": 295,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591003/Project-4/19593764_44146495_1000_mc29uz.webp",
+      "celebrity": 13
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 44,
+    "fields": {
+      "title": "Wool And Cashmere Coat",
+      "brand": "Max Mara",
+      "price": 1365,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591003/Project-4/5cafb4a57f53f968a21d9600b351b14d_btrbik.webp",
+      "celebrity": 14
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 45,
+    "fields": {
+      "title": "Wire Stretch Rubber Sandals",
+      "brand": "Bottega Veneta",
+      "price": 1083,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591003/Project-4/115521117_dr484x.webp",
+      "celebrity": 14
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 46,
+    "fields": {
+      "title": "Chuncky Chain Necklace",
+      "brand": "Fry Powers",
+      "price": 676,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591003/Project-4/FRYPW20077_1_enlarged_bjtm68.webp",
+      "celebrity": 14
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 47,
+    "fields": {
+      "title": "Bowie Biker Jacket",
+      "brand": "Isabel Marant",
+      "price": 1550,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591278/Project-4/49626122_q5ezlp.webp",
+      "celebrity": 14
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 48,
+    "fields": {
+      "title": "Vittoria Extra-long Skirt",
+      "brand": "Ann Demeulemeester",
+      "price": 566,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591276/Project-4/JSK27FA045099_1_274678_1679553032_jwtszj.jpg",
+      "celebrity": 15
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 49,
+    "fields": {
+      "title": "Corset",
+      "brand": "Dion Lee",
+      "price": 425,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591279/Project-4/128263682_wotdww.webp",
+      "celebrity": 15
+    }
+  },
+  {
+    "model": "garments.garment",
+    "pk": 50,
+    "fields": {
+      "title": "Alba Shoulder Bag",
+      "brand": "1017 ALYX 9SM",
+      "price": 615,
+      "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591277/Project-4/4167893_rneed5.webp",
+      "celebrity": 15
+    }
   }
-},
-{
-  "model": "garments.garment",
-  "pk": 2,
-  "fields": {
-    "title": "Watermill Shoulder Bag",
-    "brand": "Altuzarra",
-    "price": 300,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529948/Project-4/Altuzarra_Watermill-Shoulder-Bag_NaturalBlack_2_960x_crop_center_a1caoz.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 3,
-  "fields": {
-    "title": "Leather Sandals",
-    "brand": "Saint Laurent",
-    "price": 755,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529951/Project-4/eCom-755213AAAZY1000_A_fgrlt9.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 4,
-  "fields": {
-    "title": "Trench Coat",
-    "brand": "The Row",
-    "price": 4350,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529803/Project-4/slide__9_vn2yz3.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 5,
-  "fields": {
-    "title": "Leather Midi Skirt",
-    "brand": "Alexander McQueen",
-    "price": 3290,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529775/Project-4/P00767896_tqnchq.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 6,
-  "fields": {
-    "title": "Leather Loafers",
-    "brand": "Cos",
-    "price": 135,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529771/Project-4/app001prod_lzvkuh.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 7,
-  "fields": {
-    "title": "Puffer Jacket",
-    "brand": "Vetements",
-    "price": 2310,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529586/Project-4/image_fh0cow.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 8,
-  "fields": {
-    "title": "Inch Boot",
-    "brand": "Timberland",
-    "price": 190,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529584/Project-4/10061713-hero_dtqxva.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 9,
-  "fields": {
-    "title": "Baggy Denim Shorts",
-    "brand": "Homeboy",
-    "price": 90,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529588/Project-4/x-tra-monster-gothic-denim-shorts_13_4_l1rsi8.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 10,
-  "fields": {
-    "title": "Pleated Midi Skirt",
-    "brand": "Beare Park",
-    "price": 980,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529682/Project-4/beare-park-dark-grey-pleated-wool-midi-skirt-3_iv6cyd.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 11,
-  "fields": {
-    "title": "Oversized Leather Jacket",
-    "brand": "Mango",
-    "price": 350,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529679/Project-4/57056020_30_B_cej6om.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 12,
-  "fields": {
-    "title": "Ballet Leather Flats",
-    "brand": "J.Crew",
-    "price": 143,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529683/Project-4/J.Crew_Zoe_Ballet_Flats_conqq5.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 13,
-  "fields": {
-    "title": "Baseball Cap",
-    "brand": "47 Brand",
-    "price": 25,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529670/Project-4/81_La3RZAvL._AC_UX385__bwwwvu.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 14,
-  "fields": {
-    "title": "Arque Leather Bag",
-    "brand": "Prada",
-    "price": 1800,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529668/Project-4/232962F048024_1_ummmnm.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 15,
-  "fields": {
-    "title": "Jersey Tank Top",
-    "brand": "Toteme",
-    "price": 85,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529696/Project-4/Screenshot_2023-10-04_211144_qmtsvh.png"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 16,
-  "fields": {
-    "title": "Pleated Pocket Trousers",
-    "brand": "Issey Miyake",
-    "price": 555,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529884/Project-4/homme-plisse-issey-miyake-pleated-pocket-trousers_20550289_47093300_1000_x5hyp7.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 17,
-  "fields": {
-    "title": "Pleated Gilet",
-    "brand": "Issey Miyake",
-    "price": 420,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529891/Project-4/homme-plisse-issey-miyake-pleated-gilet_20548717_47095227_600_qvlfsy.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 18,
-  "fields": {
-    "title": "Air Jordan 1 Low G",
-    "brand": "Nike",
-    "price": 130,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529888/Project-4/e2df9f4a-87e9-4fe9-a14f-02e68e132a8a_oap7c8.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 19,
-  "fields": {
-    "title": "Float Corset Blazer",
-    "brand": "Dion Lee",
-    "price": 1380,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529489/Project-4/w460_q80_qon16i.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 20,
-  "fields": {
-    "title": "Paneled Pants",
-    "brand": "Dion Lee",
-    "price": 1080,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529488/Project-4/w460_q80_1_tr7xsx.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 21,
-  "fields": {
-    "title": "Sunglasses VE4432U",
-    "brand": "Versace",
-    "price": 243,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529510/Project-4/Screenshot_2023-10-04_215558_wjhsez.png"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 22,
-  "fields": {
-    "title": "Sherpa Trucker Jacket",
-    "brand": "Levi's",
-    "price": 120,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529629/Project-4/202781s4_qovo5t.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 23,
-  "fields": {
-    "title": "Flat Cap",
-    "brand": "Stetson Hats",
-    "price": 79,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529627/Project-4/6433501-372_1_1000x_ddbaca.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 24,
-  "fields": {
-    "title": "Tumbled Leather Boot",
-    "brand": "Yogi",
-    "price": 80,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696529640/Project-4/YOGI_AW21Q3_MENS_DYY14007_HITCHTUMBLEDLEATHER_FOOTWEAR_CHESTNUTBROWN_ECOMM1_1024x1024_2x_bzl9v2.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 25,
-  "fields": {
-    "title": "Turtleneck Knit Dress",
-    "brand": "Fenty",
-    "price": 639,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591127/Project-4/slide_2_rchm7i.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 26,
-  "fields": {
-    "title": "Parka Coat",
-    "brand": "Fenty",
-    "price": 1260,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591138/Project-4/98740768_cnnf0t.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 27,
-  "fields": {
-    "title": "Slouchy Boot",
-    "brand": "Paris Texas",
-    "price": 662,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591126/Project-4/ab9c6650f2acd60e8b7993b98492f24c_eipcub.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 28,
-  "fields": {
-    "title": "Cross Necklace",
-    "brand": "Castafiore",
-    "price": 1472,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591126/Project-4/collier-pendentif-croix-en-platine-et-diamant-657896_fbtgwg.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 29,
-  "fields": {
-    "title": "Straight Fit Jean",
-    "brand": "Ralph Lauren",
-    "price": 365,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591088/Project-4/s7-1357324_lifestyle_y3jkwo.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 30,
-  "fields": {
-    "title": "Long Leather Coat",
-    "brand": "London Leathers Direct",
-    "price": 225,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591104/Project-4/107-Black_1_578x.progressive_uhlbsu.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 31,
-  "fields": {
-    "title": "Square Leather Loafers",
-    "brand": "Martine Rose",
-    "price": 469,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591104/Project-4/18165830_38612511_1000_nx4o7e.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 32,
-  "fields": {
-    "title": "Eiderdown Puffer Coat",
-    "brand": "Let's shop",
-    "price": 42,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591043/Project-4/preen-by-thornton-bregazzi-multicoloured-Eiderdown-Puffer-Coat_lya9r9.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 33,
-  "fields": {
-    "title": "Millner Sunglasses",
-    "brand": "eOpticians",
-    "price": 21,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591043/Project-4/MI_00208_02_53_nlzduo.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 34,
-  "fields": {
-    "title": "Anime Girl Print Skirt",
-    "brand": "Comme Des Garçons",
-    "price": 994,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591050/Project-4/CCGSKNJS009XJMLX-pdp-1_mp4gwl.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 35,
-  "fields": {
-    "title": "Leather Jean Jacket",
-    "brand": "TruClothing",
-    "price": 115,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591066/Project-4/Mens-Vintage-Short-Denim-Style-Retro-Real-Suede-Leather-Jean-Jacket-Casual-6_grrvkr.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 36,
-  "fields": {
-    "title": "Flex Trousers",
-    "brand": "Yoox",
-    "price": 47,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591066/Project-4/13951999XS_14_f_h4o0tn.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 37,
-  "fields": {
-    "title": "Converse One Star",
-    "brand": "Converse",
-    "price": 65,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591066/Project-4/https___bae.hypebeast.com.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 38,
-  "fields": {
-    "title": "Printstripe Wool Blazer",
-    "brand": "Arket",
-    "price": 75,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591303/Project-4/app006prod_o59vqk.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 39,
-  "fields": {
-    "title": "Cassette Cross-body Bag",
-    "brand": "Bottega Veneta",
-    "price": 2780,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591304/Project-4/bottega-veneta-green-Leather-Plisse-Cassette-Cross-body-Bag_xy8icu.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 40,
-  "fields": {
-    "title": "Leather Pumps",
-    "brand": "N°21",
-    "price": 680,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591302/Project-4/no21-leather-pumps_20167234_45530206_600_hwcej2.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 41,
-  "fields": {
-    "title": "Mid-rise Corduroy Trousers",
-    "brand": "Dolce & Gabbana",
-    "price": 595,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591249/Project-4/P00667247_m0rxia.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 42,
-  "fields": {
-    "title": "Wool-twill Jacket",
-    "brand": "Bode",
-    "price": 1599,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591248/Project-4/image_a0vmlz.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 43,
-  "fields": {
-    "title": "Straight-leg Tailored Trousers",
-    "brand": "Loulou Studio",
-    "price": 295,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591003/Project-4/19593764_44146495_1000_mc29uz.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 44,
-  "fields": {
-    "title": "Wool And Cashmere Coat",
-    "brand": "Max Mara",
-    "price": 1365,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591003/Project-4/5cafb4a57f53f968a21d9600b351b14d_btrbik.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 45,
-  "fields": {
-    "title": "Wire Stretch Rubber Sandals",
-    "brand": "Bottega Veneta",
-    "price": 1083,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591003/Project-4/115521117_dr484x.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 46,
-  "fields": {
-    "title": "Chuncky Chain Necklace",
-    "brand": "Fry Powers",
-    "price": 676,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591003/Project-4/FRYPW20077_1_enlarged_bjtm68.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 47,
-  "fields": {
-    "title": "Bowie Biker Jacket",
-    "brand": "Isabel Marant",
-    "price": 1550,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591278/Project-4/49626122_q5ezlp.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 48,
-  "fields": {
-    "title": "Vittoria Extra-long Skirt",
-    "brand": "Ann Demeulemeester",
-    "price": 566,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591276/Project-4/JSK27FA045099_1_274678_1679553032_jwtszj.jpg"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 49,
-  "fields": {
-    "title": "Corset",
-    "brand": "Dion Lee",
-    "price": 425,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591279/Project-4/128263682_wotdww.webp"
-  }
-},
-{
-  "model": "garments.garment",
-  "pk": 50,
-  "fields": {
-    "title": "Alba Shoulder Bag",
-    "brand": "1017 ALYX 9SM",
-    "price": 615,
-    "garments": "https://res.cloudinary.com/dwgwkeccm/image/upload/v1696591277/Project-4/4167893_rneed5.webp"
-  }
-}
 ]

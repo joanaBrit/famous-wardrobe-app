@@ -10,11 +10,13 @@ class Garment(models.Model):
     celebrity = models.ForeignKey(
         'celebrities.Celebrity',
         related_name='garments',
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        db_column="celebrity"
     )
-    
 
 
-# STR 
+# STR
+
+
     def __str__(self):
-      return self.title
+        return self.title
