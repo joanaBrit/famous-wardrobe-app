@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'celebrities',
     'garments',
-    'reviews'
+    'reviews',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -107,9 +108,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Defines our user model as the user model for our app
+AUTH_USER_MODEL = 'users.User'
 
 # Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
+# https://docs.djangoproject.com/en/4.2/topics/i18n/s
 
 LANGUAGE_CODE = 'en-us'
 

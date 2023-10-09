@@ -1,0 +1,12 @@
+[
+{
+  "model": "reviews.review",
+  "pk": 2,
+  "fields": {
+    "text": "I didn't really like the skirt.",
+    "date": "2023-10-08",
+    "likes": 0,
+    "celebrity": 10
+  }
+}
+]
