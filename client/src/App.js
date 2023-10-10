@@ -10,6 +10,8 @@ import Register from './components/Register'
 import Login from './components/Login'
 import Celebrities from './components/Celebrities'
 import Garment from './components/Garment'
+import Review from './components/Review'
+import NotFound from './components/NotFound'
 
 
 
@@ -28,8 +30,7 @@ export default function App() {
 
   return (
     <>
-      <h1>Hello</h1>
-      {/* <Nav /> */}
+      <Nav />
       <BrowserRouter>
         <main>
           <Routes>
@@ -37,7 +38,9 @@ export default function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
             <Route path='/celebrities' element={<Celebrities />} />
-            <Route path='/celebrity/:pk' element={<Garment />} />
+            <Route path='/garments/:pk' element={<Garment />} />
+            <Route path='/celebrity/review:pk' element={<Review />} />
+            <Route path='*' element={<NotFound />} />
           </Routes>
         </main>
       </BrowserRouter>

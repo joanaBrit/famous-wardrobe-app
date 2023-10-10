@@ -15,7 +15,7 @@ export default function Celebrities() {
         const { data } = await axios('/api/celebrities')
         setcelebrities(data)
       } catch (error) {
-        console.log(error.response.data)
+        console.log(error)
       }
     }
     getCelebritiesData()
@@ -31,7 +31,7 @@ export default function Celebrities() {
           // nextIcon={<span aria-hidden="true" className="carousel-control-next-icon change" />}
           // prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon change" />}
           >
-            {celebrities.map(({ id, name, year, COVER_IMAGE }, i) =>
+            {celebrities.map(({ _id, name, year, COVER_IMAGE }, i) =>
               <Carousel.Item key={i}>
                 <div className='display-celebrities' >
                   <Carousel.Caption>
@@ -40,7 +40,7 @@ export default function Celebrities() {
                       <p>{year}</p>
                     </div>
                   </Carousel.Caption>
-                  <Link to={`/celebrities/${id}`}>
+                  <Link to={`/celebrities/${_id}`}>
                     <img alt={name} src={COVER_IMAGE} />
                   </Link>
                 </div>
