@@ -1,7 +1,10 @@
-# Rest Framework
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.generics import (
+  ListCreateAPIView,
+  GenericAPIView,
+  RetrieveUpdateDestroyAPIView)
 
+# Permissions
+from rest_framework.permissions import IsAuthenticated
 
 # Model
 from .models import Garment
@@ -10,15 +13,20 @@ from .models import Garment
 from .serializers.common import GarmentSerializer
 
 
+# Generic
+class GarmentView(GenericAPIView):
+    queryset = Garment.objects.all()
+    serializer_class = GarmentSerializer
+
+
 # Class views
 # Get garments
-class GarmentListView(ListCreateAPIView):
+class GarmentListView(GarmentView, ListCreateAPIView):
     permission_classes = [IsAuthenticated]
-    queryset = Garment.objects.all()
-    serializer_class = GarmentSerializer
+    
     
 # Update, Delete garments
-class GarmentDetailView(RetrieveUpdateDestroyAPIView):
-    queryset = Garment.objects.all()
-    serializer_class = GarmentSerializer
+class GarmentDetailView(GarmentView, RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsAuthenticated]
+    
 

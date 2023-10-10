@@ -4,11 +4,21 @@ from django.db import models
 class Review(models.Model):
     text = models.TextField(max_length=350)
     date = models.DateField(auto_now=True)
-    likes = models.PositiveIntegerField()
+    likes = models.ManyToManyField(
+        'users.User',
+        related_name='liked_reviews',
+        blank=True
+    )
     celebrity = models.ForeignKey(
         'celebrities.Celebrity',
         related_name='reviews',
         on_delete=models.CASCADE
+    )
+    user = models.ForeignKey(
+        'users.User',
+        related_name='reviews',
+        on_delete=models.CASCADE,
+        null=True
     )
 
 
