@@ -1,12 +1,12 @@
-import Form from './Form'
 import axios from 'axios'
+import Form from './Form'
 
+import { useState } from 'react'
 
 
 export default function Register() {
 
-  const fields = [
-
+  const [fields, setFields] = useState([
     {
       type: 'text',
       name: 'Username',
@@ -23,10 +23,11 @@ export default function Register() {
       type: 'password',
       name: 'Password Confirmation',
     }
-  ]
+  ])
 
-  function register(formData) {
-    return axios.post('/api/register', formData)
+  async function register(formData) {
+    const response = await axios.post('/api/auth/register/', formData)
+    return response
   }
 
 

@@ -1,23 +1,27 @@
-import Form from './Form'
 import axios from 'axios'
+import Form from './Form'
+
+import { useState } from 'react'
+import { setToken } from '../utils/auth'
 
 
 
-export default function Login( { token, setToken, setUsername } ) {
-  const fields = [
+export default function Login() {
+
+  const [fields, setFields] = useState([
     {
-      type: 'email',
-      name: 'Email',
+      type: 'text',
+      name: 'Username',
     },
     {
       type: 'password',
       name: 'Password',
     }
-  ]
+  ])
 
 
   async function login(formData) {
-    const response = await axios.post('/api/login', formData)
+    const response = await axios.post('/api/auth/login/', formData)
     const token = response.data.token
     // const username = response.data.username
     setToken(response.data.token)
@@ -27,6 +31,6 @@ export default function Login( { token, setToken, setUsername } ) {
 
 
   return (
-    <Form title='Login' request={login} fields={fields} redorect='/celebrities' />
+    <Form title='Login' request={login} fields={fields} redirect='/celebrities/' />
   )
 }

@@ -6,9 +6,9 @@ import axios from 'axios'
 // Page components
 import Home from './components/Home'
 import Nav from './components/Nav'
-import Register from './components/Register' 
-import Login from './components/Login' 
-import Celebrities from './components/Celebrities' 
+import Register from './components/Register'
+import Login from './components/Login'
+import Celebrities from './components/Celebrities'
 import Garment from './components/Garment'
 
 
@@ -17,7 +17,7 @@ export default function App() {
   useEffect(() => {
     async function getData() {
       try {
-        const { data } = await axios.get('/api/')
+        const { data } = await axios.get('/api/celebrities/')
         console.log(data)
       } catch (error) {
         console.log(error.response.data)
@@ -28,7 +28,8 @@ export default function App() {
 
   return (
     <>
-      <Nav />
+      <h1>Hello</h1>
+      {/* <Nav /> */}
       <BrowserRouter>
         <main>
           <Routes>
@@ -36,7 +37,7 @@ export default function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
             <Route path='/celebrities' element={<Celebrities />} />
-            <Route path='/celebrity/:id' element={<Garment />} />
+            <Route path='/celebrity/:pk' element={<Garment />} />
           </Routes>
         </main>
       </BrowserRouter>

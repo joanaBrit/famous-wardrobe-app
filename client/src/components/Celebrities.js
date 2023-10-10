@@ -1,4 +1,54 @@
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
-export default function Celebrities(){
-  return <h1>CELEBRITIES PAGE</h1>
+import axios from 'axios'
+import Carousel from 'react-bootstrap/Carousel'
+
+
+
+export default function Celebrities() {
+  const [celebrities, setcelebrities] = useState([])
+  useEffect(() => {
+
+    async function getCelebritiesData() {
+      try {
+        const { data } = await axios('/api/celebrities')
+        setcelebrities(data)
+      } catch (error) {
+        console.log(error.response.data)
+      }
+    }
+    getCelebritiesData()
+  }, [])
+
+  return (
+    <section>
+      <main>
+        <section className='wrap-carousel'>
+          <h1>Famous Wardrobe App</h1>
+          <Carousel
+          // interval={1000}
+          // nextIcon={<span aria-hidden="true" className="carousel-control-next-icon change" />}
+          // prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon change" />}
+          >
+            {celebrities.map(({ id, name, year, COVER_IMAGE }, i) =>
+              <Carousel.Item key={i}>
+                <div className='display-celebrities' >
+                  <Carousel.Caption>
+                    <div className='text-carousel'>
+                      <h3>{name}</h3>
+                      <p>{year}</p>
+                    </div>
+                  </Carousel.Caption>
+                  <Link to={`/celebrities/${id}`}>
+                    <img alt={name} src={COVER_IMAGE} />
+                  </Link>
+                </div>
+              </Carousel.Item>
+            )}
+          </Carousel>
+        </section>
+      </main>
+    </section>
+  )
 }
