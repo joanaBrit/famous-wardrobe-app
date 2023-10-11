@@ -33,7 +33,6 @@ export default function App() {
   const [ user, setUser ] = useState(tokenIsValid('famous-access-token'))
 
   useEffect(() => {
-    console.log('app checking tpken', tokenIsValid('famous-access-token') )
     setUser(tokenIsValid('famous-access-token'))
   }, [location])
 

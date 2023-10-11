@@ -6,7 +6,7 @@ class Garment(models.Model):
     title = models.CharField(max_length=100)
     brand = models.CharField(max_length=50)
     price = models.PositiveIntegerField()
-    image = models.ImageField(max_length=200)
+    image = models.URLField(max_length=200)
     celebrity = models.ForeignKey(
         'celebrities.Celebrity',
         related_name='garments',

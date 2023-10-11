@@ -3,29 +3,37 @@ import { Link } from 'react-router-dom'
 
 import axios from 'axios'
 import Card from 'react-bootstrap/Card'
-import axiosAuth from '../utils/axios'
 import { tokenIsValid } from '../utils/auth'
+import axiosAuth from '../utils/axios'
 
 
 
 
 
 export default function Garment() {
-  const [ user, setUser ] = useState(tokenIsValid('famous-access-token'))
-  const [celebrities, setCelebrities] = useState([])
+  const [user, setUser] = useState(tokenIsValid('famous-access-token'))
+  const [celebrity, setCelebrity] = useState([])
   const [garments, setGarments] = useState([])
   // console.log(garments)
   useEffect(() => {
 
-    async function getGarmentsData() {
+    async function getData() {
       try {
-        const { data } = await axios.get('/api/garments/')
-        setGarments(data)
+
+        const celebritiesResponse = await axiosAuth.get('/api/celebrities/1/')
+        const garmentsResponse = await axiosAuth.get('/api/garments/')
+
+        setCelebrity(celebritiesResponse.data)
+        setGarments(garmentsResponse.data)
+
+        // console.log(data)
+        // setGarments(data)
       } catch (error) {
-        console.log(error.response.data)
+        console.error(error)
+        // console.log(error.response.data)
       }
     }
-    getGarmentsData()
+    getData()
   }, [])
 
   if (!user) {
@@ -38,16 +46,12 @@ export default function Garment() {
         <section className='garments'>
           <h1>Famous Wardrobe App</h1>
 
-          {celebrities.map((celebrity) => (
-
-            <div key={celebrity.id}>
-              <img alt={celebrity.name} src={celebrity.cover_image} />
-            </div>
-          ))}
-          {garments.map((garment) =>
-
-            < div key={garment.id} className='display-garments' >
-              <Card className="bg-dark text-white" ></Card>
+          <div key={celebrity.pk}>
+            <img alt={celebrity.name} src={celebrity.cover_image} />
+          </div>
+          {celebrity.garments && celebrity.garments.map((garment) =>
+            <div key={garment.id} className='display-garments' >
+              <Card className="bg-dark text-white style=max-width: 18rem" ></Card>
               <div>
                 <Card.Img src={garment.image} alt="Garment image" />
               </div>

@@ -7,19 +7,19 @@ const axiosAuth = axios.create()
 //  Interceptors - intercept every request sent with axiosAuth
 axiosAuth.interceptors.request.use(async (config) => {
 
-  if (!tokenIsValid('access-token')) {
-    if (tokenIsValid('refresh-token')) {
+  if (!tokenIsValid('famous-access-token')) {
+    if (tokenIsValid('famous-refresh-token')) {
       const { data } = await axios.post('/api/auth/refresh/', {
-        refresh: getToken('refresh-token'),
+        refresh: getToken('famous-refresh-token'),
       })
-      setToken('access-token', data.access)
+      setToken('famous-access-token', data.access)
 
     } else {
       throw new axios.Cancel('Session expired, please login again.')
     }
   }
 
-  config.headers.Authorization = `Bearer ${getToken('access-token')}`
+  config.headers.Authorization = `Bearer ${getToken('famous-access-token')}`
   return config
 })
 
