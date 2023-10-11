@@ -1,7 +1,7 @@
 import { useState, Fragment, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { getToken } from '../utils/auth'
+import { getToken, setToken } from '../utils/auth'
 import { stateValues, fieldValues } from '../utils/Common'
 
 import Container from 'react-bootstrap/Container'
@@ -53,9 +53,8 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
   async function handleSubmit(e) {
     e.preventDefault()
     try {
-      const { data } = await request(formData)
-
-
+      await request(formData)
+      
       // If redirect
       if (redirect) {
         navigate(redirect)
@@ -64,7 +63,7 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
     } catch (error) {
       console.log(error)
 
-      const errorMessage = error.response.data.detail || 'Missing fields'
+      const errorMessage = 'Missing fields' //error.response.data.detail || 
       console.log(errorMessage)
       setErrors(errorMessage)
     }

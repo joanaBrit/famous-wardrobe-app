@@ -3,18 +3,23 @@ import { Link } from 'react-router-dom'
 
 import axios from 'axios'
 import Card from 'react-bootstrap/Card'
+import axiosAuth from '../utils/axios'
+import { tokenIsValid } from '../utils/auth'
 
 
 
 
-export default function Garment({ user }) {
+
+export default function Garment() {
+  const [ user, setUser ] = useState(tokenIsValid('famous-access-token'))
   const [celebrities, setCelebrities] = useState([])
   const [garments, setGarments] = useState([])
+  // console.log(garments)
   useEffect(() => {
 
     async function getGarmentsData() {
       try {
-        const { data } = await axios('/api/garments')
+        const { data } = await axios.get('/api/garments/')
         setGarments(data)
       } catch (error) {
         console.log(error.response.data)
@@ -22,6 +27,7 @@ export default function Garment({ user }) {
     }
     getGarmentsData()
   }, [])
+
   if (!user) {
     return <>Unauthenticated</>
   }

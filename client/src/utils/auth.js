@@ -6,22 +6,25 @@ export const getToken = (tokenName) => {
   return localStorage.getItem(tokenName)
 }
 
-// export const removeToken(){
-//   return localStorage.removeItem(tokenName)
-// }
 
 export const tokenIsValid = (tokenName) => {
+  console.log('call')
   const token = getToken(tokenName)
-
-  if (token === null || token === undefined) return false
+  // console.log(token)
+  // if (token === null || token === undefined) return false
+  if (!token) {
+    console.log('No token.')
+    return false
+  }
 
   try {
-    console.log(token)
+    
     const exp = JSON.parse(atob(token.split('.')[1])).exp
     const now = Date.now() / 1000
-
+    console.log(exp, now)
     return exp > now
   } catch (e) {
+    console.log('Error token. ', token)
     return false
   }
 }

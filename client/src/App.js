@@ -13,7 +13,7 @@ import Review from './components/Review'
 import NotFound from './components/NotFound'
 
 // import Nav from './components/Nav'
-import { isAuthenticated, tokenIsValid } from './utils/auth'
+import { tokenIsValid } from './utils/auth'
 
 // export default function App() {
 //   useEffect(() => {
@@ -30,19 +30,17 @@ import { isAuthenticated, tokenIsValid } from './utils/auth'
 export default function App() {
 
 
-  // * location variables
-  // const location = useLocation()
-
   const [ user, setUser ] = useState(tokenIsValid('famous-access-token'))
 
   useEffect(() => {
+    console.log('app checking tpken', tokenIsValid('famous-access-token') )
     setUser(tokenIsValid('famous-access-token'))
   }, [location])
 
 
   return (
     <>
-      {/* <Nav /> */}
+      {/* <Nav user={user} /> */}
       <BrowserRouter>
         <main>
           <Routes>
@@ -50,8 +48,8 @@ export default function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
             <Route path='/celebrities' element={<Celebrities />} />
-            <Route path='/celebrities/:pk/garments' element={<Garment user={user}/>} />
-            <Route path='/celebrity/review:pk' element={<Review />} />
+            <Route path='/celebrities/:id/garments' element={<Garment />} />
+            <Route path='/celebrity/review:pk' element={<Review user={user}/>} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </main>
