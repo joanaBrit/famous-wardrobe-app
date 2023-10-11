@@ -4,7 +4,7 @@ from django.db import models
 class Celebrity(models.Model):
     name = models.CharField(max_length=50)
     year = models.PositiveIntegerField()
-    cover_image = models.ImageField(max_length=200)
+    cover_image = models.URLField(max_length=200)
     likes = models.ManyToManyField(
         'users.User',
         related_name='liked_celebrities',

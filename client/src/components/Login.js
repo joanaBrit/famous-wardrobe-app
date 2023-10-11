@@ -3,6 +3,7 @@ import Form from './Form'
 
 import { useState } from 'react'
 import { setToken } from '../utils/auth'
+// import axiosAuth from '../utils/axios'
 
 
 
@@ -25,6 +26,7 @@ export default function Login() {
     const token = response.data.token
     // const username = response.data.username
     setToken(response.data.token)
+  
     // setUsername(response.data.username)
     return response
   }

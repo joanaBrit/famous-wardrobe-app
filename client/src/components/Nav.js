@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal'
 // import { removeToken } from
 
 
-export default function Nav({ user }) {
+function Nav({ user }) {
 
   const [show, setShow] = useState(false)
 

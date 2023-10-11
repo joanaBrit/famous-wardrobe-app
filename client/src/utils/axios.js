@@ -22,3 +22,5 @@ axiosAuth.interceptors.request.use(async (config) => {
   config.headers.Authorization = `Bearer ${getToken('access-token')}`
   return config
 })
+
+export default axiosAuth

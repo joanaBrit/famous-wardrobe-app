@@ -5,7 +5,7 @@ import axios from 'axios'
 
 // Page components
 import Home from './components/Home'
-import Nav from './components/Nav'
+// import Nav from './components/Nav'
 import Register from './components/Register'
 import Login from './components/Login'
 import Celebrities from './components/Celebrities'
@@ -30,7 +30,7 @@ export default function App() {
 
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <BrowserRouter>
         <main>
           <Routes>
@@ -38,7 +38,7 @@ export default function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
             <Route path='/celebrities' element={<Celebrities />} />
-            <Route path='/garments/:pk' element={<Garment />} />
+            <Route path='/garments' element={<Garment />} />
             <Route path='/celebrity/review:pk' element={<Review />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
