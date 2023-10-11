@@ -20,7 +20,7 @@ export default function Garment() {
     async function getData() {
       try {
 
-        const celebritiesResponse = await axiosAuth.get('/api/celebrities/1/')
+        const celebritiesResponse = await axiosAuth.get('/api/celebrities/1/')//! Cheek Here!!!!
         const garmentsResponse = await axiosAuth.get('/api/garments/')
 
         setCelebrity(celebritiesResponse.data)
@@ -37,7 +37,7 @@ export default function Garment() {
   }, [])
 
   if (!user) {
-    return <>Unauthenticated</>
+    return <>Unauthenticated</>//! Check HERE!!!!!!!1
   }
 
   return (

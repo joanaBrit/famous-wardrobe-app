@@ -15,18 +15,7 @@ import NotFound from './components/NotFound'
 // import Nav from './components/Nav'
 import { tokenIsValid } from './utils/auth'
 
-// export default function App() {
-//   useEffect(() => {
-//     async function getData() {
-//       try {
-//         const { data } = await axios.get('/api/celebrities/')
-//         console.log(data)
-//       } catch (error) {
-//         console.log(error.response.data)
-//       }
-//     }
-//     getData()
-//   }, [])
+
 export default function App() {
 
 
@@ -48,7 +37,7 @@ export default function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/celebrities' element={<Celebrities />} />
             <Route path='/celebrities/:id/garments' element={<Garment />} />
-            <Route path='/celebrity/review:pk' element={<Review user={user}/>} />
+            <Route path='/celebrity/:id/review' element={<Review user={user}/>} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </main>
