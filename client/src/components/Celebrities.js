@@ -42,7 +42,7 @@ export default function Celebrities() {
                       <p>{year}</p>
                     </div>
                   </Carousel.Caption>
-                  <Link to={`/celebrities/${id}`}>
+                  <Link to={`/celebrities/${id}/garments`}>
                     <img alt={name} src={coverImage} />
                   </Link>
                 </div>

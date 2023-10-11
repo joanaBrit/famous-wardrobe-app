@@ -6,7 +6,9 @@ import Card from 'react-bootstrap/Card'
 
 
 
-export default function Garment() {
+
+export default function Garment({ user }) {
+  const [celebrities, setCelebrities] = useState([])
   const [garments, setGarments] = useState([])
   useEffect(() => {
 
@@ -20,7 +22,9 @@ export default function Garment() {
     }
     getGarmentsData()
   }, [])
-
+  if (!user) {
+    return <>Unauthenticated</>
+  }
 
   return (
     <section>
@@ -28,27 +32,28 @@ export default function Garment() {
         <section className='garments'>
           <h1>Famous Wardrobe App</h1>
 
-          {garments.map(({ id, title, brand, price, image }, i) =>
+          {celebrities.map((celebrity) => (
 
-            < div key={id} className='display-garments' >
+            <div key={celebrity.id}>
+              <img alt={celebrity.name} src={celebrity.cover_image} />
+            </div>
+          ))}
+          {garments.map((garment) =>
+
+            < div key={garment.id} className='display-garments' >
               <Card className="bg-dark text-white" ></Card>
               <div>
-                <Card.Img src={image} alt="Garment image" />
+                <Card.Img src={garment.image} alt="Garment image" />
               </div>
               <Card.ImgOverlay>
                 <div className='garment-text'>
-                  <h2>{title}</h2>
-                  <p>{brand}</p>
-                  <p>{price}</p>
+                  <h2>{garment.title}</h2>
+                  <p>{garment.brand}</p>
+                  <p>{garment.price}</p>
                 </div>
               </Card.ImgOverlay>
-              {/* <Link to={`/garments/${id}`}>
-                <img alt={name} src={IMAGE} />
-              </Link> */}
             </div>
-
           )}
-
         </section>
       </main >
     </section >

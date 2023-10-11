@@ -23,9 +23,10 @@ export default function Login() {
 
   async function login(formData) {
     const response = await axios.post('/api/auth/login/', formData)
-    const token = response.data.token
+    const token = response.data.access
     // const username = response.data.username
-    setToken(response.data.token)
+    setToken('famous-access-token', token)
+    setToken('famous-refresh-token', response.data.refresh)
   
     // setUsername(response.data.username)
     return response
