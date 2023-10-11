@@ -35,7 +35,7 @@ export default function Celebrities() {
             {celebrities.map(({ id, name, year, coverImage }, i) =>
               <Carousel.Item key={i}>
                 <div className='display-celebrities' >
-                  <>{JSON.stringify({ id, name, year, coverImage })}</>
+                  {/* <>{JSON.stringify({ id, name, year, coverImage })}</> */}
                   <Carousel.Caption>
                     <div className='text-carousel'>
                       <h3>{name}</h3>
