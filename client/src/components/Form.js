@@ -99,7 +99,7 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
                 )
               })}
               {errors && <p className='text-warning bold text mt-4'>{errors}</p>}
-              <button type="submit" className='btn btn-sm col-10 d-block m-auto mt-4'>{title}</button>
+              <button type="submit" className='btn btn-sm m-auto mt-3'>{title}</button>
             </Col>
             :
             'Form Error'

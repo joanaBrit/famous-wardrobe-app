@@ -4,6 +4,7 @@ import { tokenIsValid } from '../utils/auth'
 import axiosAuth from '../utils/axios'
 
 import Form from './Form'
+import '../styles/components/CreateReview.scss'
 
 export default function CreateReview() {
   const navigate = useNavigate()
@@ -18,7 +19,7 @@ export default function CreateReview() {
       type: 'text',
       name: 'Title',
     },
-    { 
+    {
       type: 'textarea',
       name: 'Text',
     }
@@ -37,7 +38,10 @@ export default function CreateReview() {
   return (
     <>
       <h1>Review PAGE</h1>
-      <Form title='Create Review' request={createReview} fields={fields} />
+      <div className='formContainer'>
+        <Form title='Create Review' request={createReview} fields={fields} />
+      </div>
+
     </>
   )
 }

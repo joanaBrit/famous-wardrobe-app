@@ -1,0 +1,12 @@
+form{
+  display: grid;
+  gap: 5px;
+}
+input, 
+textarea {
+  background: #ffffff80;
+  outline: #ffffff;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px 10px
+}
