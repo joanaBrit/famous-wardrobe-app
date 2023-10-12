@@ -1,6 +1,7 @@
-export default function NotFound(){
+export default function NotFound() {
   return (
-    // <img src={''} alt='NotFound'/>
-    <h1>NotFound</h1>
+    <div className='not-found'>
+      <h1>No Clothes Here!</h1>
+    </div>
   )
 }
