@@ -12,7 +12,7 @@ import Garment from './components/Garment'
 import Review from './components/Review'
 import NotFound from './components/NotFound'
 
-// import Nav from './components/Nav'
+import Nav from './components/Nav'
 import { tokenIsValid } from './utils/auth'
 
 
@@ -28,7 +28,7 @@ export default function App() {
 
   return (
     <>
-      {/* <Nav user={user} /> */}
+      <Nav />
       <BrowserRouter>
         <main>
           <Routes>

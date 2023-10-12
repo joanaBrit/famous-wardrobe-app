@@ -33,6 +33,7 @@ export default function Celebrities() {
           // prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon change" />}
           >
             {celebrities.map(({ id, name, year, coverImage }, i) =>
+            // {Array.from({ length: Math.ceil(celebrities.length / 3)})}
               <Carousel.Item key={i}>
                 <div className='display-celebrities' >
                   {/* <>{JSON.stringify({ id, name, year, coverImage })}</> */}

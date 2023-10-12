@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Review(models.Model):
+    title = models.TextField(max_length=350)
     text = models.TextField(max_length=350)
     date = models.DateField(auto_now=True)
     likes = models.ManyToManyField(

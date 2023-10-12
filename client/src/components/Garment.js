@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import axios from 'axios'
 import Card from 'react-bootstrap/Card'
+import Spinner from 'react-bootstrap/Spinner'
 import { tokenIsValid } from '../utils/auth'
 import axiosAuth from '../utils/axios'
 
@@ -45,7 +46,7 @@ export default function Garment() {
       <main>
         <section className='garments'>
           <h1>Famous Wardrobe App</h1>
-
+          {/* { celebrities ? */}
           <div key={celebrity.pk}>
             <img alt={celebrity.name} src={celebrity.cover_image} />
           </div>
@@ -64,6 +65,8 @@ export default function Garment() {
               </Card.ImgOverlay>
             </div>
           )}
+          : 
+          ((<Spinner animation="grow" size="sm" variant="dark" />) * 3)
         </section>
       </main >
     </section >

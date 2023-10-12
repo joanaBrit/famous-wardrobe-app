@@ -1,36 +1,37 @@
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
-import { getToken } from '../utils/auth'
-
+import { useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { tokenIsValid } from '../utils/auth'
 import axiosAuth from '../utils/axios'
-import axios from 'axios'
-
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 
 import Form from './Form'
 
-
-
-export default function CreateReview({ user, token }) {
-
+export default function CreateReview() {
   const navigate = useNavigate()
-
+  const params = useParams()
 
   useEffect(() => {
-    !user && navigate('/login')
-  }, [user, navigate])
+    !(tokenIsValid('famous-access-token')) && navigate('/login')
+  }, [])
 
   const fields = [
     {
-      text: 'text',
+      type: 'text',
+      name: 'Title',
+    },
+    { 
+      type: 'textarea',
+      name: 'Text',
     }
   ]
 
   function createReview(formData) {
-    return axios.post('/api/reviews/', formData)
+    const celebrityId = params.id
+    const createReviewForm = {
+      ...formData,
+      celebrity: celebrityId,
+    }
+    // const celebrityId = ;
+    return axiosAuth.post('/api/reviews/', createReviewForm)
   }
 
   return (

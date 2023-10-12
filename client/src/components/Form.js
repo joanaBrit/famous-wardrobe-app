@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/Col'
 
 
 export default function Form({ title, request, fields, redirect, onLoad }) {
-  
+
 
   // * Variable
 
@@ -54,7 +54,7 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
     e.preventDefault()
     try {
       await request(formData)
-      
+
       // If redirect
       if (redirect) {
         navigate(redirect)
@@ -79,14 +79,22 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
                 return (
                   <Fragment key={variable}>
                     <label hidden htmlFor={variable}>{name}</label>
-                    <input
-                      type={type}
-                      name={variable}
-                      placeholder={name}
-                      value={formData[variable]}
-                      onChange={handleChange}
-                      id={variable}
-                    />
+                    {type === 'textarea'
+                      ? <textarea
+                        style={{ resize: 'none' }}
+                        name={variable}
+                        id={variable}
+                        value={formData[variable]}
+                        onChange={handleChange}
+                        placeholder={name} />
+                      : <input
+                        type={type}
+                        name={variable}
+                        placeholder={name}
+                        value={formData[variable]}
+                        onChange={handleChange}
+                        id={variable}
+                      />}
                   </Fragment>
                 )
               })}
