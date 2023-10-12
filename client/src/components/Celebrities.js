@@ -13,7 +13,7 @@ export default function Celebrities() {
     async function getCelebritiesData() {
       try {
         const { data } = await axios('/api/celebrities')
-        data.forEach(item=>item.coverImage = item.cover_image)
+        data.forEach(item => item.coverImage = item.cover_image)
         setcelebrities(data)
       } catch (error) {
         console.log(error)
@@ -46,11 +46,16 @@ export default function Celebrities() {
                     <img alt={name} src={coverImage} />
                   </Link>
                 </div>
+                <Carousel.Caption>
+                  <Link to={`/celebrities/${id}/reviews`}>
+                    <button type='button' className='Review-btn btn-sm' >Review</button>
+                  </Link>
+                </Carousel.Caption>
               </Carousel.Item>
             )}
           </Carousel>
         </section>
-      </main>
-    </section>
+      </main >
+    </section >
   )
 }

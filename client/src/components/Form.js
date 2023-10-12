@@ -61,9 +61,7 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
       }
 
     } catch (error) {
-      console.log(error)
-
-      const errorMessage = 'Missing fields' //error.response.data.detail || 
+      const errorMessage = 'Missing fields' //error.response.data.detail || //! check HERE
       console.log(errorMessage)
       setErrors(errorMessage)
     }

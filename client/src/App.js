@@ -37,7 +37,7 @@ export default function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/celebrities' element={<Celebrities />} />
             <Route path='/celebrities/:id/garments' element={<Garment />} />
-            <Route path='/celebrity/:id/review' element={<Review user={user}/>} />
+            <Route path='/celebrities/:id/reviews' element={<Review />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </main>
