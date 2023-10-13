@@ -1,0 +1,41 @@
+.reviews-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 30px;
+
+  .review-card {
+    padding: 0px;
+    overflow: hidden;
+
+    .content,
+    .bottom-banner {
+      padding: 15px;
+    }
+
+    .content {
+      background: #ffffffaa;
+    }
+
+    p {
+      font-size: large;
+    }
+
+    .bottom-banner {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.no-review-banner,
+.loading-banner{
+  grid-area: 1/1/2/3;
+  text-align: center;
+}
+
+.no-review-banner {
+  h4{
+    margin: 10px;
+  }
+}

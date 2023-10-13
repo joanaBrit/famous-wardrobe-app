@@ -1,5 +1,5 @@
 // ? Home Page
-body{
+body {
   margin: 0;
   background-image: url('../../../public/neom-3qBi6HWZMeg-unsplash.jpg');
   background-size: cover;
@@ -9,11 +9,21 @@ body{
 // ? Not Found Page
 
 .not-found {
-background-image: url('https://res.cloudinary.com/dwgwkeccm/image/upload/v1697121177/Project-4/pexels-ivan-samkov-7671166_x3c2jx.jpg');
-// background-image: url('https://res.cloudinary.com/dwgwkeccm/image/upload/v1697120395/Project-4/pexels-max-rahubovskiy-7166555_gaj4it.jpg');
-background-size: cover;
-min-height: 100vh;
-h1 {
-  color: white;
+  background-image: url('https://res.cloudinary.com/dwgwkeccm/image/upload/v1697121177/Project-4/pexels-ivan-samkov-7671166_x3c2jx.jpg');
+  background-size: cover;
+  min-height: 100vh;
+
+  h1 {
+    color: white;
+  }
 }
+
+.spinner {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: $theme-dark-grey;
+  gap: 10px;
+  width: 3rem; 
+  height: 3rem;
 }
