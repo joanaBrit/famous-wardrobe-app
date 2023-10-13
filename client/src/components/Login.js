@@ -40,7 +40,9 @@ export default function Login() {
   }
 
   return (
-    <Form title='Login' request={login} fields={fields} redirect='/celebrities/' />
+    <div className='formContainer'>
+      <Form title='Login' request={login} fields={fields} redirect='/celebrities/' />
+    </div>
   )
 }
 

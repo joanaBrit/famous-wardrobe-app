@@ -65,8 +65,11 @@ export default function Garment() {
               </Card.ImgOverlay>
             </div>
           )}
-          : 
-          ((<Spinner animation="grow" size="sm" variant="dark" />) * 3)
+          :
+          <Spinner className='spinner' style={{ marginTop: '3rem', marginLeft: '3rem' }} animation="border" role="status">
+            <strong>🔴</strong>
+            {/* <strong>💯</strong> */}
+          </Spinner>
         </section>
       </main >
     </section >

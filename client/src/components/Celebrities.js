@@ -92,8 +92,11 @@ export default function Celebrities() {
                         </div>
                       </div>
 
+                      <Link to={`/celebrities/${id}/create-review`}>
+                        <button type='button' className='Review-btn btn-sm' >Create Review</button>
+                      </Link>
                       <Link to={`/celebrities/${id}/reviews`}>
-                        <button type='button' className='Review-btn btn-sm' >Review</button>
+                        <button type='button' className='Review-btn btn-sm' >Show Reviews</button>
                       </Link>
                     </div>
                   ))}

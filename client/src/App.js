@@ -9,9 +9,9 @@ import Register from './components/Register'
 import Login from './components/Login'
 import Celebrities from './components/Celebrities'
 import Garment from './components/Garment'
-import Review from './components/Review'
+import CreateReview from './components/CreateReview'
 import NotFound from './components/NotFound'
-
+import Reviews from './components/Review'
 import Nav from './components/Nav'
 import { tokenIsValid } from './utils/auth'
 
@@ -37,7 +37,8 @@ export default function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/celebrities' element={<Celebrities />} />
             <Route path='/celebrities/:id/garments' element={<Garment />} />
-            <Route path='/celebrities/:id/reviews' element={<Review />} />
+            <Route path='/celebrities/:id/create-review' element={<CreateReview />} />
+            <Route path='/celebrities/:id/reviews' element={<Reviews />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </main>

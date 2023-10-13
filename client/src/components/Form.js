@@ -20,7 +20,7 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
   // * State
 
   const [formData, setFormData] = useState((stateValues(fields)))
-  const [errors, setErrors] = useState('')
+  const [errors, setErrors] = useState()
 
 
   // * Component render
@@ -61,9 +61,15 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
       }
 
     } catch (error) {
-      const errorMessage = error.response.data || 'Missing fields' //! check HERE
-      console.log(errorMessage)
-      setErrors(errorMessage)
+      const errorMessage = error.response.data
+      if (typeof errorMessage === 'object') {
+        const missingFields = Object.entries(errorMessage)
+          .filter(([field, msg]) => msg[0] === 'This field may not be blank.')
+          .map(([field, msg]) => field)
+        setErrors(`The following required fields are missing: ${missingFields.join(', ')}`)
+      } else {
+        setErrors('Unknown error: ' + JSON.stringify(errorMessage))
+      }
     }
   }
 
