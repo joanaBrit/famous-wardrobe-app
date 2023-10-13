@@ -12,7 +12,7 @@ export default function Celebrities() {
 
     async function getCelebritiesData() {
       try {
-        const { data } = await axios('/api/celebrities')
+        const { data } = await axios('/api/celebrities/')
         data.forEach(item => item.coverImage = item.cover_image)
         setcelebrities(data)
       } catch (error) {
