@@ -79,7 +79,7 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
       <Container>
         <Row>
           {fields.length > 0 ?
-            <Col as="form" xs={{ span: 8 }} md={{ span: 6 }} onSubmit={handleSubmit} autoComplete='off'>
+            <Col as="form" xs={{ span: 8 }} md={{ span: 6 }} onSubmit={handleSubmit} autoComplete='off' className='jo-card'>
               {fieldValues(fields).map(field => {
                 const { type, name, variable } = field
                 return (
@@ -105,7 +105,7 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
                 )
               })}
               {errors && <p className='text-warning bold text mt-4'>{errors}</p>}
-              <button type="submit" className='btn btn-sm m-auto mt-3'>{title}</button>
+              <button type="submit" className='m-auto mt-3'>{title}</button>
             </Col>
             :
             'Form Error'
