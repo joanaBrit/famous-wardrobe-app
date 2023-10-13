@@ -15,15 +15,15 @@
 }
 
 .formContainer form button{
-  background: #890000;
-  color: #fff;
+  background-color: $theme-primary;
+  color: $theme-light;
   padding: 7px 2rem;
   text-transform: uppercase;
   font-weight: bold;
   transition: all 0.2s;
 
   &:hover{
-    background: #930000;
+    background-color: #930000;
     color: #fff; 
     transform: translateY(-3px);
     box-shadow: 0px 3px 7px #00000040;

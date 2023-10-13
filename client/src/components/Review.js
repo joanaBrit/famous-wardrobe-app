@@ -27,17 +27,13 @@ export default function CreateReview() {
 
   function createReview(formData) {
     const celebrityId = params.id
-    const createReviewForm = {
-      ...formData,
-      celebrity: celebrityId,
-    }
+    const createReviewForm = { ...formData, celebrity: celebrityId }
     // const celebrityId = ;
     return axiosAuth.post('/api/reviews/', createReviewForm)
   }
 
   return (
     <>
-      <h1>Review PAGE</h1>
       <div className='formContainer'>
         <Form title='Create Review' request={createReview} fields={fields} />
       </div>

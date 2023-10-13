@@ -24,7 +24,7 @@ export default function SingleReview({ user }) {
   useEffect(() => {
     async function getReviewData() {
       try {
-        const { data } = await axios.get(`/api/reviews/${reviewId}/`)
+        const { data } = await axiosAuth.get(`/api/reviews/${reviewId}/`)
         setReview(data)
       } catch (error) {
         console.log(error)
@@ -35,7 +35,7 @@ export default function SingleReview({ user }) {
 
   async function handleDelete() {
     try {
-      await axios.delete(`/api/reviews/${reviewId}/`)
+      await axiosAuth.delete(`/api/reviews/${reviewId}/`)
       navigate('/celebrities/')
     } catch (error) {
       console.log(error)
@@ -62,6 +62,7 @@ export default function SingleReview({ user }) {
                   </div>
                 }
                 <h1 className='featured'>{user.username}</h1>
+                <p>{review.title}</p>
                 <p>{review.text}</p>
                 <p>{review.date}</p>
                 <Link className="btn btn-blue" to="/celebrities/">Back</Link>

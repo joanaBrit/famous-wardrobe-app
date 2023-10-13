@@ -2,6 +2,7 @@ import axios from 'axios'
 import Form from './Form'
 
 import { useState } from 'react'
+import axiosAuth from '../utils/axios'
 
 
 export default function Register() {
@@ -26,7 +27,7 @@ export default function Register() {
   ])
 
   async function register(formData) {
-    const response = await axios.post('/api/auth/register/', formData)
+    const response = await axiosAuth.post('/api/auth/register/', formData)
     return response
   }
 
