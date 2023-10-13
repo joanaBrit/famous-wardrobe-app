@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3dc2fbc2.css",
+    "main.js": "/static/js/main.a4487e01.js",
+    "static/media/neom-3qBi6HWZMeg-unsplash.jpg": "/static/media/neom-3qBi6HWZMeg-unsplash.6797d91ab5479813dcd7.jpg",
+    "index.html": "/index.html",
+    "main.3dc2fbc2.css.map": "/static/css/main.3dc2fbc2.css.map",
+    "main.a4487e01.js.map": "/static/js/main.a4487e01.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3dc2fbc2.css",
+    "static/js/main.a4487e01.js"
+  ]
+}
