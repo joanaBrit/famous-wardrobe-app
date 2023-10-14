@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { removeToken, tokenIsValid } from '../utils/auth'
 
 import Modal from 'react-bootstrap/Modal'
@@ -10,13 +10,15 @@ export default function Nav() {
 
   const [show, setShow] = useState(false)
   const navigate = useNavigate()
+  const location = useLocation()
 
   function logOut() {
-    removeToken()
+    removeToken('famous-access-token')
+    removeToken('famous-refresh-token')
     navigate('/')
   }
 
-  function isLoggedIn(){
+  function isLoggedIn() {
     return tokenIsValid('famous-access-token') || tokenIsValid('famous-refresh-token')
   }
 
@@ -29,6 +31,7 @@ export default function Nav() {
           <span></span>
           <span></span>
         </a>
+        <h1>{getPageTitle(location.pathname)}</h1>
       </nav>
       <Modal
         show={show}
@@ -41,14 +44,9 @@ export default function Nav() {
           <nav onClick={() => setShow(false)}>
             <Link className='modal-text' to='/'>Home</Link>
             <Link className='modal-text' to='/celebrities'>Celebrities</Link>
-            {isLoggedIn() ?
-              <>
-                <Link className='modal-text' to='/celebrities/:id/create-review'>Create Review</Link>
-                <Link className='modal-text' to='/celebrities/:id/garments'>Garments</Link>
-                <a className='modal-text' href="#" onClick={logOut} >Log Out</a>
-              </>
-              :
-              <>
+            {isLoggedIn()
+              ? <a className='modal-text' href="#" onClick={logOut} >Log Out</a>
+              : <>
                 <Link className='modal-text' to='/register'>Register</Link>
                 <Link className='modal-text' to='/login'>Login</Link>
               </>
@@ -58,4 +56,23 @@ export default function Nav() {
       </Modal>
     </>
   )
+}
+
+function getPageTitle(path) {
+  const subpaths = path.split('/')
+  if (subpaths[1] === 'celebrities') {
+    if (subpaths[3] === 'reviews') {
+      return 'Reviews'
+    } else if (subpaths[3] === 'create-review') {
+      return 'Create new review'
+    } else {
+      return 'Celebrities'
+    }
+  } else if (subpaths[1] === 'register') {
+    return 'Register'
+  } else if (subpaths[1] === 'login') {
+    return 'Login'
+  } else {
+    return 'Famous Wardrobe App'
+  }
 }

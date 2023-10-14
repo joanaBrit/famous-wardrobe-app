@@ -24,14 +24,9 @@ import Modal from 'react-bootstrap/Modal'
 // }
 
 export default function Celebrities() {
-  const navigate = useNavigate()
   const [celebrities, setcelebrities] = useState([])
-  const [likes, setlikes] = useState({})
-
-
 
   useEffect(() => {
-
     async function getCelebritiesData() {
       try {
         const { data } = await axios('/api/celebrities/')
@@ -43,22 +38,6 @@ export default function Celebrities() {
     }
     getCelebritiesData()
   }, [])
-
-  async function likedCelebrity(props) {
-    const { likes, id: celebrityId } = props.data
-    const [numberOfLikes, setNumberOfLikes] = useState(likes.length)
-    const [numberShow, setNumberShow] = useState(false)
-
-    const response = await axiosAuth.patch(`/api/${celebrityId}/like/`)
-    if (response.status === 201) {
-      setNumberOfLikes(numberOfLikes + 1)
-      setNumberShow()
-    } else if (response.status === 204) {
-      setNumberOfLikes(numberOfLikes - 1)
-    }
-  }
-
-
 
   // * Carousel work displaying 3 images
 
@@ -76,57 +55,13 @@ export default function Celebrities() {
   return (
     <section>
       <main>
-        <h1>Famous Wardrobe App</h1>
         <section className='wrap-carousel' >
-
           <Carousel>
             {celebritiesSplits.map((split, splitIndex) => (
               <Carousel.Item key={splitIndex}>
                 <div className='split-container'>
-                  {split.map(({ id, name, year, coverImage }, i) => (
-
-                    <div key={i} className='display-celebrities jo-card' >
-                      <div className='img-position'>
-
-                        <div className='celebrity-image-container'>
-                          <Link to={`/celebrities/${id}/garments`} >
-                            <img alt={name} src={coverImage} />
-                          </Link>
-
-                          <Modal
-                            size="sm"
-                            // show={numberShow}
-                            // onHide={() => setNumberShow(false)}
-                            aria-labelledby="example-modal-sizes-title-sm"
-                          >
-                            {/* <a className='likes' onClick={() => setNumberShow(true)}>🔥</a> */}
-
-                          </Modal>
-                        </div>
-
-                        <div className='text-carousel'>
-                          <h3>{name}</h3>
-                          <p>{year}</p>
-                        </div>
-                      </div>
-                      <div className='action-buttons'>
-                        <button
-                          className='Review-btn btn-sm'
-                          onClick={() => navigate(`/celebrities/${id}/create-review`)} >
-                          Create Review
-                        </button>
-                        <button
-                          className='Review-btn btn-sm'
-                          onClick={() => navigate(`/celebrities/${id}/reviews`)} >
-                          Show Reviews
-                        </button>
-                      </div>
-
-                    </div>
-                  ))}
+                  {split.map(cardProps => <CelebrityCard data={cardProps} key={cardProps.id} />)}
                 </div>
-
-
               </Carousel.Item>
             ))}
           </Carousel>
@@ -136,3 +71,74 @@ export default function Celebrities() {
   )
 }
 
+function CelebrityCard({ data }) {
+  const { id: celebrityId, name, year, coverImage, likes } = data
+
+  const navigate = useNavigate()
+  const [numberOfLikes, setNumberOfLikes] = useState(likes.length)
+  const [numberShow, setNumberShow] = useState(false)
+
+  async function addLikeToCelebrity() {
+    const response = await axiosAuth.patch(`/api/celebrities/${celebrityId}/like/`)
+
+    if (response.status === 201) {
+      setNumberOfLikes(numberOfLikes + 1)
+      showLikes()
+    } else if (response.status === 204) {
+      setNumberOfLikes(numberOfLikes - 1)
+      showLikes()
+    }
+  }
+
+  function showLikes() {
+    setNumberShow(true)
+
+    setTimeout(() => {
+      setNumberShow(false)
+    }, 2500)
+  }
+
+
+  return <div className='display-celebrities jo-card' >
+    <div className='img-position'>
+
+      <div className='celebrity-image-container'>
+        <Link to={`/celebrities/${celebrityId}/garments`} >
+          <img alt={name} src={coverImage} />
+        </Link>
+        <a className='likes' onClick={addLikeToCelebrity}>
+          <img src="https://res.cloudinary.com/dwgwkeccm/image/upload/v1697319522/flames_laqehk.png" />
+        </a>
+        <div className={`likes-number ${numberShow ? 'show' : 'hide'}`} >
+          {numberOfLikes}
+        </div>
+        <Modal
+          size="sm"
+          // show={numberShow}
+          // onHide={() => setNumberShow(false)}
+          aria-labelledby="example-modal-sizes-title-sm"
+        >
+
+        </Modal>
+      </div>
+
+      <div className='text-carousel'>
+        <h3>{name}</h3>
+        <p>{year}</p>
+      </div>
+    </div>
+    <div className='action-buttons'>
+      <button
+        className='Review-btn btn-sm'
+        onClick={() => navigate(`/celebrities/${celebrityId}/create-review`)} >
+        Create Review
+      </button>
+      <button
+        className='Review-btn btn-sm'
+        onClick={() => navigate(`/celebrities/${celebrityId}/reviews`)} >
+        Show Reviews
+      </button>
+    </div>
+
+  </div>
+}

@@ -1,9 +1,17 @@
 .nav-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   margin: 10px;
   padding: 7px;
   background: #ffffff80;
   backdrop-filter: blur(30px);
   border-radius: 5px;
+
+  h1 {
+    margin: 0;
+    font-size: 1.75rem;
+  }
 }
 
 .nav-toggle {
@@ -39,7 +47,7 @@
   }
 
   .modal-header {
-    background: #ffffff80;
+    background: #FDEC9E;
     button {
       position: absolute;
       top: 10px;
@@ -52,7 +60,7 @@
       }
     }
   }
-  
+
   .modal-body{
     nav{
       display: grid;

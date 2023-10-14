@@ -75,7 +75,6 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
 
   return (
     <section>
-      <h2 className="subtitle fs-2 mb-4">{title}</h2>
       <Container>
         <Row>
           {fields.length > 0 ?

@@ -29,7 +29,6 @@ export default function Reviews() {
 
   if (isLoading) {
     return <>
-      <h1>Reviews</h1>
       <div className='loading-banner' >
         <LoadingSpinner />
       </div>
@@ -37,7 +36,6 @@ export default function Reviews() {
   }
 
   return <>
-    <h1>Reviews</h1>
     <div className='reviews-container'>
       {reviewData.length === 0
         ? <NoReviewsBanner />

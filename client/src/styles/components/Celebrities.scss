@@ -51,6 +51,13 @@
       position: absolute;
       bottom: 1rem;
       right: 1rem;
+      cursor: pointer;
+
+      img{
+        height: 30px;
+        width: 30px;
+        object-fit: contain;
+      }
     }
 
     img {
@@ -59,8 +66,27 @@
       border-radius: 10px;
       object-fit: cover;
     }
-  }
 
+    .likes-number{
+      position: absolute;
+      background: #fff;
+      right: 1rem;
+      bottom: 1rem;
+      padding: 10px;
+      border-radius: 10px;
+      transition: all 0.2s;
+      transform: translateY(30px);
+      pointer-events: none;
+      
+      &.hide{
+        opacity: 0;
+      }
+      &.show{
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 600px) {

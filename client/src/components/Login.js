@@ -31,7 +31,7 @@ export default function Login() {
 
     } catch (error) {
 
-      setMessage(error.response.data.detail)
+      setMessage(error.response.data.detail) //! Check here, need to stop redirect
     }
   }
 

@@ -2,8 +2,6 @@ import axios from 'axios'
 import Form from './Form'
 
 import { useState } from 'react'
-// import axiosAuth from '../utils/axios'
-
 
 export default function Register() {
 
