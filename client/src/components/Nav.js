@@ -63,6 +63,8 @@ function getPageTitle(path) {
   if (subpaths[1] === 'celebrities') {
     if (subpaths[3] === 'reviews') {
       return 'Reviews'
+    } else if (subpaths[3] === 'garments') {
+      return 'Garment Details'
     } else if (subpaths[3] === 'create-review') {
       return 'Create new review'
     } else {

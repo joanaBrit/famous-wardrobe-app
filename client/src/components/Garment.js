@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import axios from 'axios'
 import Card from 'react-bootstrap/Card'
@@ -10,65 +10,58 @@ import axiosAuth from '../utils/axios'
 
 
 export default function Garment() {
-  const [user, setUser] = useState(tokenIsValid('famous-access-token'))
-  const [celebrity, setCelebrity] = useState([])
-  const [garments, setGarments] = useState([])
-  // console.log(garments)
-  useEffect(() => {
+  const navigate = useNavigate()
+  const params = useParams()
+  const [celebrity, setCelebrity] = useState()
+  // const [garments, setGarments] = useState([])
 
+  useEffect(() => {
     async function getData() {
       try {
-
-        const celebritiesResponse = await axiosAuth.get('/api/celebrities/1/')//! Cheek Here!!!!
-        const garmentsResponse = await axiosAuth.get('/api/garments/')
+        const celebritiesResponse = await axiosAuth.get(`/api/celebrities/${params.id}/`)
+        // const garmentsResponse = await axiosAuth.get('/api/garments/')
 
         setCelebrity(celebritiesResponse.data)
-        setGarments(garmentsResponse.data)
+        // setGarments(garmentsResponse.data)
 
-        // console.log(data)
-        // setGarments(data)
       } catch (error) {
         console.error(error)
-        // console.log(error.response.data)
       }
     }
     getData()
   }, [])
 
-  if (!user) {
-    return <>Unauthenticated</>//! Check HERE!!!!!!!1
+  if (!tokenIsValid('famous-access-token')) {
+    navigate('/login')
   }
 
   return (
-    <section>
-      <main>
-        <section className='garments'>
-          <h1>Famous Wardrobe App</h1>
-          {/* { celebrities ? */}
-          <div key={celebrity.pk}>
+    <div className='garment-details-board'>
+      {celebrity ?
+        <>
+          <div className='celebrity-photo'>
             <img alt={celebrity.name} src={celebrity.cover_image} />
           </div>
-          {celebrity.garments && celebrity.garments.map((garment) =>
-            <div key={garment.id} className='display-garments' >
-              <Card className="bg-dark text-white style=max-width: 18rem" ></Card>
-              <div>
-                <Card.Img src={garment.image} alt="Garment image" />
+          <div className='garments'>
+            {celebrity.garments && celebrity.garments.map((garment) =>
+              <div key={garment.id} className='display-garments' >
+                <Card className="bg-dark text-white style=max-width: 18rem" >
+                  <Card.Img src={garment.image} alt="Garment image" />
+                  <Card.ImgOverlay className='garment-text'>
+                    <h2>{garment.title}</h2>
+                    <p>{garment.brand}</p>
+                    <p>{garment.price}</p>
+                  </Card.ImgOverlay>
+                </Card>
               </div>
-              <Card.ImgOverlay>
-                <div className='garment-text'>
-                  <h2>{garment.title}</h2>
-                  <p>{garment.brand}</p>
-                  <p>{garment.price}</p>
-                </div>
-              </Card.ImgOverlay>
-            </div>
-          )}
-          :
-          <Spinner className='spinner' style={{ marginTop: '3rem', marginLeft: '3rem' }} animation="border" role="status">
-            <strong>0</strong>
-          </Spinner>
-        </section>
-      </main >
-    </section >
+            )}
+          </div>
+        </>
+        :
+        <Spinner className='spinner' style={{ marginTop: '3rem', marginLeft: '3rem' }} animation="border" role="status">
+          <strong>0</strong>
+        </Spinner>
+      }
+    </div>
   )
 }
