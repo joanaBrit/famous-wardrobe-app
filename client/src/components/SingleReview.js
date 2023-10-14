@@ -16,7 +16,6 @@ import Col from 'react-bootstrap/Col'
 export default function SingleReview({ user }) {
 
   const [review, setReview] = useState(null)
-
   const { reviewId } = useParams
   // const [reviewId, setReviewId] = useState()
   const navigate = useNavigate()
@@ -42,8 +41,7 @@ export default function SingleReview({ user }) {
     }
   }
 
-
-
+  
 
   return (
     <section>

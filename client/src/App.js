@@ -19,7 +19,7 @@ import { tokenIsValid } from './utils/auth'
 export default function App() {
 
 
-  const [ user, setUser ] = useState(tokenIsValid('famous-access-token'))
+  const [user, setUser] = useState(tokenIsValid('famous-access-token'))
 
   useEffect(() => {
     setUser(tokenIsValid('famous-access-token'))
@@ -28,8 +28,9 @@ export default function App() {
 
   return (
     <>
-      <Nav />
+
       <BrowserRouter>
+        <Nav />
         <main>
           <Routes>
             <Route path='/' element={<Home />} />

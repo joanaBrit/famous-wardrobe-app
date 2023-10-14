@@ -6,7 +6,19 @@
 
   .review-card {
     padding: 0px;
+    position: relative;
     overflow: hidden;
+
+    .review-title-bar{
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        object-fit: contain;
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
 
     .content,
     .bottom-banner {
@@ -24,6 +36,24 @@
     .bottom-banner {
       display: flex;
       justify-content: space-between;
+    }
+
+    .review-options{
+      display: flex;
+      gap: 5px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1rem;
+      background: #ccc;
+      border-radius: 10rem 0 0 10rem;
+      border: 1px solid #ddd;
+
+      img{
+        width: 1.5rem;
+        height: 1.5rem;
+        object-fit: contain;
+      }
     }
   }
 }

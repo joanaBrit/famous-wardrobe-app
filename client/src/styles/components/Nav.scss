@@ -31,18 +31,48 @@
   position: absolute;
   height: 100%;
   box-shadow: 3px 0 5px rgba(0, 0, 0, 0.2);
-}
 
-.modal-header {
-  background-color: grey;
-
-  button {
-    position: absolute;
-    top: 5vw;
-    right: 5vw;
+  .modal-content{
+    width: max-content;
+    background: #ffffff80;
+    backdrop-filter: blur(10px);
   }
 
-  span {
-    cursor: pointer;
+  .modal-header {
+    background: #ffffff80;
+    button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+      &:hover{
+        transform: unset;
+        background-color: unset;
+        box-shadow: none;
+      }
+    }
+  }
+  
+  .modal-body{
+    nav{
+      display: grid;
+      gap: 5px;
+      padding: 1rem 2rem;
+
+      span {
+        cursor: pointer;
+      }
+  
+      a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.5rem;
+      }
+    }
   }
 }
+
+.nav-modal .modal-dialog{
+  margin: 75px 10px;
+}
+

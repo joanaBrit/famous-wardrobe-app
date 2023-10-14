@@ -1,14 +1,34 @@
 import { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import axios from 'axios'
+import axiosAuth from '../utils/axios'
 import Carousel from 'react-bootstrap/Carousel'
-// import 'bootstrap/dist/css/bootstrap.min.css'
+import Modal from 'react-bootstrap/Modal'
 
+
+//* Likes
+// async function likedCelebrity() {
+// const [likes, setlikes] = useState(0)
+// const [isCliked, setIsClicked] = useState()
+// const { id } = useParams()
+
+//   const response = await axiosAuth.patch(`/api/celebrities/${id}/`)
+
+//   if (isCliked) {
+//     // Like succeeded, update likes on UI to add 1
+//     setNumberOfLikes(likes + 1)
+//   } else if (response.status === 204) {
+//     setNumberOfLikes(numberOfLikes - 1)
+//   }
+// }
 
 export default function Celebrities() {
   const navigate = useNavigate()
   const [celebrities, setcelebrities] = useState([])
+  const [likes, setlikes] = useState({})
+
+
 
   useEffect(() => {
 
@@ -23,6 +43,21 @@ export default function Celebrities() {
     }
     getCelebritiesData()
   }, [])
+
+  async function likedCelebrity(props) {
+    const { likes, id: celebrityId } = props.data
+    const [numberOfLikes, setNumberOfLikes] = useState(likes.length)
+    const [numberShow, setNumberShow] = useState(false)
+
+    const response = await axiosAuth.patch(`/api/${celebrityId}/like/`)
+    if (response.status === 201) {
+      setNumberOfLikes(numberOfLikes + 1)
+      setNumberShow()
+    } else if (response.status === 204) {
+      setNumberOfLikes(numberOfLikes - 1)
+    }
+  }
+
 
 
   // * Carousel work displaying 3 images
@@ -57,7 +92,16 @@ export default function Celebrities() {
                           <Link to={`/celebrities/${id}/garments`} >
                             <img alt={name} src={coverImage} />
                           </Link>
-                          <a className='likes' onClick={() => console.log('a')}>🔥</a>
+
+                          <Modal
+                            size="sm"
+                            // show={numberShow}
+                            // onHide={() => setNumberShow(false)}
+                            aria-labelledby="example-modal-sizes-title-sm"
+                          >
+                            {/* <a className='likes' onClick={() => setNumberShow(true)}>🔥</a> */}
+
+                          </Modal>
                         </div>
 
                         <div className='text-carousel'>

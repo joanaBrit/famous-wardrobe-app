@@ -1,19 +1,23 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { removeToken, tokenIsValid } from '../utils/auth'
 
 import Modal from 'react-bootstrap/Modal'
-import { removeToken } from '../utils/auth'
 
 
-export default function Nav({ user }) {
+
+export default function Nav() {
 
   const [show, setShow] = useState(false)
-
-  // * Variables
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   function logOut() {
     removeToken()
+    navigate('/')
+  }
+
+  function isLoggedIn(){
+    return tokenIsValid('famous-access-token') || tokenIsValid('famous-refresh-token')
   }
 
 
@@ -28,18 +32,20 @@ export default function Nav({ user }) {
       </nav>
       <Modal
         show={show}
-        fullscreen={true}
         onHide={() => setShow(false)}
         style={{ display: 'flex', alignItems: 'flex-start' }}
+        className='nav-modal'
       >
-        <Modal.Header className='text'>
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body className='text'>
           <nav onClick={() => setShow(false)}>
             <Link className='modal-text' to='/'>Home</Link>
             <Link className='modal-text' to='/celebrities'>Celebrities</Link>
-            {user ?
+            {isLoggedIn() ?
               <>
-                <Link className='modal-text' to='/'>Create Review</Link>
-                <Link className='modal-text' onClick={logOut} to='/login'>Log Out</Link>
+                <Link className='modal-text' to='/celebrities/:id/create-review'>Create Review</Link>
+                <Link className='modal-text' to='/celebrities/:id/garments'>Garments</Link>
+                <a className='modal-text' href="#" onClick={logOut} >Log Out</a>
               </>
               :
               <>
@@ -48,7 +54,7 @@ export default function Nav({ user }) {
               </>
             }
           </nav>
-        </Modal.Header>
+        </Modal.Body>
       </Modal>
     </>
   )
