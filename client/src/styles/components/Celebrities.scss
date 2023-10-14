@@ -22,15 +22,46 @@
   display: flex;
   align-items: center;
   gap: 10px;
+
+
+  .display-celebrities {
+    width: 30vw;
+  }
+
+  .text-carousel {
+    color: #444;
+    margin: 1rem;
+  }
+
+  .action-buttons {
+    display: grid;
+    gap: 5px;
+
+    button {
+      background: #ffffff80;
+      color: #890000;
+    }
+  }
+
+  .celebrity-image-container {
+    position: relative;
+    height: 60vh;
+
+    a.likes {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+  }
+
 }
-
-.display-celebrities img {
-  width: 100%;
-  border-radius: 10px;
-  max-width: 300px;
-}
-
-
 
 @media screen and (max-width: 600px) {
   .carousel {
@@ -39,52 +70,3 @@
   }
 }
 
-
-
-// .carousel-content span {
-//   text-transform: uppercase;
-//   letter-spacing: 2px;
-//   font-size: 1rem;
-//   color: white;
-// }
-
-// .carousel-content h1 {
-//   text-transform: capitalize;
-//   letter-spacing: 0.8px;
-//   font-size: 4rem;
-//   background-color: $theme-secondary;
-//   background-image: linear-gradient(45deg, $theme-secondary, black);
-//   background-size: 100%;
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-// }
-
-// .carousel-content hr {
-//   display: block;
-//   background: $theme-secondary;
-//   height: 0.25rem;
-//   width: 6.25rem;
-//   border: none;
-//   margin: 1.125rem 0 1.875rem 0;
-// }
-
-// .carousel-content p {
-//   line-height: 1.6;
-// }
-
-// .slider-btn {
-//   display: inline-block;
-//   color: grey;
-//   background: white;
-//   padding: 0.625rem 1.875rem;
-//   margin-top: 2.125rem;
-//   text-decoration: none;
-//   text-transform: uppercase;
-//   border: 2px solid grey;
-//   border-radius: 3.125rem;
-//   transition: 0.3s ease-in-out;
-//   &:hover {
-//     border: 0.125rem solid $theme-secondary;
-//     color: $theme-secondary;
-//   }
-// }

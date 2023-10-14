@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Spinner from 'react-bootstrap/Spinner'
 import axiosAuth from '../utils/axios'
+import { tokenIsValid } from '../utils/auth'
 
 export default function Reviews() {
   const params = useParams()
@@ -62,9 +63,20 @@ function LoadingSpinner() {
 }
 
 function ReviewCard(props) {
-  const { title, text, date, likes } = props.data
+  const { title, text, date, likes, id: reviewId } = props.data
+  const [numberOfLikes, setNumberOfLikes] = useState(likes.length)
 
-  const numberOfLikes = likes.length
+  async function likedReview() {
+    const response = await axiosAuth.patch(`/api/reviews/${reviewId}/like/`)
+    if (response.status === 201) {
+      // Like succeeded, update likes on UI to add 1
+      setNumberOfLikes(numberOfLikes + 1)
+    } else if (response.status === 204) {
+      setNumberOfLikes(numberOfLikes - 1)
+    }
+  }
+
+
   return <div className="jo-card review-card">
     <div className='content'>
       <h3>{title}</h3>
@@ -72,7 +84,11 @@ function ReviewCard(props) {
     </div>
 
     <div className='bottom-banner'>
-      <span>{numberOfLikes === 0 ? '🤍 0' : `❤️ ${numberOfLikes}`} Likes</span>
+      <span>
+        <a onClick={likedReview} style={{ cursor: 'pointer', marginRight: '5px' }}>
+          {numberOfLikes === 0 ? '🤍' : '❤️'}
+        </a>
+        {numberOfLikes} Likes</span>
       <span>{date}</span>
     </div>
   </div>
