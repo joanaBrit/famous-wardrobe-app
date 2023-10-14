@@ -1,20 +1,28 @@
-
-.nave-header {
-  padding: 20px;
+.nav-header {
+  margin: 10px;
+  padding: 7px;
+  background: #ffffff80;
+  backdrop-filter: blur(30px);
+  border-radius: 5px;
 }
 
 .nav-toggle {
+  width: 20px;
+  height: 20px;
+  box-sizing: content-box;
+  display: flex;
+  gap: 20%;
+  flex-direction: column;
+  padding: 10px;
   cursor: pointer;
+  border-radius: 10px;
+
   span {
-    position: absolute;
-    left: 25%;
-    width: 50%;
-    height: 3px;
-    background: rgba(43, 61, 79, 0.3);
+    display: block;
+    height: 20%;
+    background: #890000;
     border-radius: 10px;
-    overflow: hidden;
     transition: 0.5s;
-    background-color: red;
   }
 }
 
@@ -27,11 +35,13 @@
 
 .modal-header {
   background-color: grey;
+
   button {
-    position:absolute;
+    position: absolute;
     top: 5vw;
     right: 5vw;
   }
+
   span {
     cursor: pointer;
   }

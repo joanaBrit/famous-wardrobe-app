@@ -6,6 +6,9 @@ export const getToken = (tokenName) => {
   return localStorage.getItem(tokenName)
 }
 
+export const removeToken = (tokenName) => {
+  return localStorage.removeItem(tokenName)
+}
 
 export const tokenIsValid = (tokenName) => {
   const token = getToken(tokenName)

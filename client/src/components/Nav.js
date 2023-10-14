@@ -2,32 +2,29 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import Modal from 'react-bootstrap/Modal'
-// import { removeToken } from
+import { removeToken } from '../utils/auth'
 
 
 export default function Nav({ user }) {
 
   const [show, setShow] = useState(false)
 
-  // // * Variables
+  // * Variables
   // const navigate = useNavigate()
 
-  // function logOut() {
-  //   // removeToken()
-  //   navigate('/login')
-  // }
-
+  function logOut() {
+    removeToken()
+  }
 
 
   return (
     <>
       <nav className='nav-header'>
-        {/* <Link to='/'></Link> */}
-        <button className='nav-toggle' onClick={() => setShow(true)}> {/* activate the toggle */}
+        <a className='nav-toggle' onClick={() => setShow(true)}>
           <span></span>
           <span></span>
           <span></span>
-        </button>
+        </a>
       </nav>
       <Modal
         show={show}
@@ -42,7 +39,7 @@ export default function Nav({ user }) {
             {user ?
               <>
                 <Link className='modal-text' to='/'>Create Review</Link>
-                {/* <span onClick={logOut}>Log Out</span> */}
+                <Link className='modal-text' onClick={logOut} to='/login'>Log Out</Link>
               </>
               :
               <>

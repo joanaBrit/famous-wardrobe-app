@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Spinner from 'react-bootstrap/Spinner'
 import axiosAuth from '../utils/axios'
-import { tokenIsValid } from '../utils/auth'
 
 export default function Reviews() {
   const params = useParams()

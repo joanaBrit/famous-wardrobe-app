@@ -9,8 +9,6 @@ import axiosAuth from '../utils/axios'
 
 
 
-
-
 export default function Garment() {
   const [user, setUser] = useState(tokenIsValid('famous-access-token'))
   const [celebrity, setCelebrity] = useState([])
@@ -67,8 +65,7 @@ export default function Garment() {
           )}
           :
           <Spinner className='spinner' style={{ marginTop: '3rem', marginLeft: '3rem' }} animation="border" role="status">
-            <strong>🔴</strong>
-            {/* <strong>💯</strong> */}
+            <strong>0</strong>
           </Spinner>
         </section>
       </main >

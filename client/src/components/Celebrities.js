@@ -1,17 +1,14 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import axios from 'axios'
 import Carousel from 'react-bootstrap/Carousel'
-import 'bootstrap/dist/css/bootstrap.min.css'
-
+// import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 export default function Celebrities() {
   const navigate = useNavigate()
   const [celebrities, setcelebrities] = useState([])
-  // const [activeIndex, setActiveIndex] = useState(0)
-  const carouselMoves = useRef(null)
 
   useEffect(() => {
 
@@ -27,7 +24,9 @@ export default function Celebrities() {
     getCelebritiesData()
   }, [])
 
+
   // * Carousel work displaying 3 images
+
   const splitCelebrities = 3
   const celebritiesSplits = celebrities.reduce((resultArray, item, index) => {
     const splitIndex = Math.floor(index / splitCelebrities)
@@ -35,9 +34,7 @@ export default function Celebrities() {
     if (!resultArray[splitIndex]) {
       resultArray[splitIndex] = []
     }
-
     resultArray[splitIndex].push(item)
-
     return resultArray
   }, [])
 
@@ -49,7 +46,6 @@ export default function Celebrities() {
 
           <Carousel>
             {celebritiesSplits.map((split, splitIndex) => (
-              // {Array.from({ length: Math.ceil(celebrities.length / 3)})}
               <Carousel.Item key={splitIndex}>
                 <div className='split-container'>
                   {split.map(({ id, name, year, coverImage }, i) => (
