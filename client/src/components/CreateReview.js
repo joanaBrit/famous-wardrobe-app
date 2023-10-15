@@ -6,7 +6,6 @@ import axiosAuth from '../utils/axios'
 import Form from './Form'
 
 export default function CreateReview() {
-  const [formResponse, setFormResponse] = useState(null)
   const navigate = useNavigate()
   const params = useParams()
 

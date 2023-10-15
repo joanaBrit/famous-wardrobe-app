@@ -10,6 +10,7 @@ import Login from './components/Login'
 import Celebrities from './components/Celebrities'
 import Garment from './components/Garment'
 import CreateReview from './components/CreateReview'
+import UpdateReview from './components/UpdateReview'
 import NotFound from './components/NotFound'
 import Reviews from './components/Review'
 import Nav from './components/Nav'
@@ -39,6 +40,7 @@ export default function App() {
             <Route path='/celebrities' element={<Celebrities />} />
             <Route path='/celebrities/:id/garments' element={<Garment />} />
             <Route path='/celebrities/:id/create-review' element={<CreateReview />} />
+            <Route path='/celebrities/:celebrityId/review/:reviewId/update' element={<UpdateReview />} />
             <Route path='/celebrities/:id/reviews' element={<Reviews />} />
             <Route path='*' element={<NotFound />} />
           </Routes>

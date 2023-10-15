@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/Col'
 export default function Form({ title, request, fields, redirect, onLoad }) {
 
   const navigate = useNavigate()
-  const [formData, setFormData] = useState((stateValues(fields)))
+  const [formData, setFormData] = useState(stateValues(fields))
 
 
   // * Component render
@@ -19,7 +19,7 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
   useEffect(() => {
     async function fillUpForm() {
       try {
-        const { data } = await onLoad()
+        const { data } = onLoad
         setFormData(data)
       } catch (error) {
         console.log(error)

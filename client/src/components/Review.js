@@ -65,7 +65,7 @@ function NoReviewsBanner({ id }) {
 }
 
 function ReviewCard(props) {
-  const { title, text, date, likes, id: reviewId, user: userId } = props.data
+  const { title, text, date, likes, id: reviewId, user: userId, celebrity } = props.data
   const [numberOfLikes, setNumberOfLikes] = useState(likes.length)
   const [optionMenu, setOptionMenu] = useState(false)
   const navigate = useNavigate()
@@ -136,7 +136,7 @@ function ReviewCard(props) {
           <a onClick={handleDelete} href="#">
             <img src={'https://res.cloudinary.com/dwgwkeccm/image/upload/v1697113505/Project-4/disposal_1_gsafke.png'} alt={'trash'} />
           </a>
-          <Link to={`/review/${reviewId}/update`}>
+          <Link to={`/celebrities/${celebrity}/review/${reviewId}/update`}>
             <img className='update' src={'https://res.cloudinary.com/dwgwkeccm/image/upload/v1697113413/Project-4/pencil_qssfhn.png'} alt={'pen'} />
           </Link>
           <a onClick={toggleEditMenu} href="#">

@@ -1,7 +1,7 @@
 // converting an array of fields into value of formData
 export function stateValues(fields) {
   return fields.reduce((fieldsObj, field) => {
-    const name = field.name.replace(' ', '_').toLowerCase()
+    const name = field.name.replace(' ', '_').toLowerCase() 
     return { ...fieldsObj, [name]: '' }
   }, {})
 }
