@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import Spinner from 'react-bootstrap/Spinner'
+
+import LoadingSpinner from './LoadingSpinner'
 import axiosAuth from '../utils/axios'
+
+
 
 export default function Reviews() {
   const params = useParams()
@@ -20,7 +23,7 @@ export default function Reviews() {
         setReviewData(response.data.reviews)
         setCelebrityName(response.data.celebrity)
       } else {
-        setError('🤖 Oops, try again!')
+        setError('Oops, try again!')
       }
     }
   }, [])
@@ -51,11 +54,6 @@ function NoReviewsBanner() {
     <h4> There are no reviews! </h4>
     <button>Add the first review</button>
   </div>
-}
-
-function LoadingSpinner() {
-  return <Spinner className='spinner' style={{ marginTop: '3rem', marginLeft: '3rem' }} animation="border" role="status">
-  </Spinner>
 }
 
 function ReviewCard(props) {
@@ -118,7 +116,6 @@ function ReviewCard(props) {
           </div>
           <p>{text}</p>
         </div>
-
         <div className='bottom-banner'>
           <span>
             <a onClick={likedReview} style={{ cursor: 'pointer', marginRight: '5px' }}>
@@ -137,7 +134,6 @@ function ReviewCard(props) {
           <a onClick={toggleEditMenu} href="#">
             <img src="https://res.cloudinary.com/dwgwkeccm/image/upload/v1697304007/arrow-circle-right_fyjxqj.svg" />
           </a>
-
         </div>}
       </div>
     </main>
