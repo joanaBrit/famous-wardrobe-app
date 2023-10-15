@@ -12,7 +12,6 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
 
   const navigate = useNavigate()
   const [formData, setFormData] = useState((stateValues(fields)))
-  const [errors, setErrors] = useState()
 
 
   // * Component render
@@ -24,7 +23,6 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
         setFormData(data)
       } catch (error) {
         console.log(error)
-        setErrors(error)
       }
     }
     if (onLoad) {
@@ -39,33 +37,20 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value })
     // set errors to the starting point
-    setErrors('')
   }
 
   async function handleSubmit(e) {
     e.preventDefault()
-    try {
-      await request(formData)
+    const result = await request(formData)
 
-      // If redirect
-      if (redirect) {
-        navigate(redirect)
-      }
-
-    } catch (error) {
-      const errorMessage = error.response.data
-      if (typeof errorMessage === 'object') {
-        const missingFields = Object.entries(errorMessage)
-          .filter(([field, msg]) => msg[0] === 'This field may not be blank.')
-          .map(([field, msg]) => field)
-        setErrors(`The following required fields are missing: ${missingFields.join(', ')}`)
-      } else {
-        setErrors('Unknown error: ' + JSON.stringify(errorMessage))
-      }
+    // If redirect
+    if (redirect && !result.doNotNavigate) {
+      console.log('form is navigating', redirect, !result.doNotNavigate, redirect && !result.doNotNavigate)
+      navigate(redirect)
     }
   }
 
-  
+
   return (
     <section>
       <Container>
@@ -96,7 +81,6 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
                   </Fragment>
                 )
               })}
-              {errors && <p className='text-warning bold text mt-4'>{errors}</p>}
               <button type="submit" className='m-auto mt-3'>{title}</button>
             </Col>
             :

@@ -2,15 +2,8 @@
   position: relative;
   width: calc(min(90rem, 90%));
   margin: 0 auto;
-  min-height: 100vh;
   column-gap: 3rem;
   padding-block: min(20vh, 3rem);
-
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  visibility: hidden;
 }
 
 .carousel-indicators {

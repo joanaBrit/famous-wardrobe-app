@@ -3,7 +3,7 @@ import Form from './Form'
 
 import { useState } from 'react'
 import { setToken } from '../utils/auth'
-
+import Alert from 'react-bootstrap/Alert'
 
 
 export default function Login() {
@@ -30,7 +30,16 @@ export default function Login() {
       setMessage('Successful login.')
 
     } catch (error) {
-      setMessage(error.response.data.detail) //! Check here, need to stop redirect
+      console.log(error)
+      const errorMessage = error.response.data
+
+      if (errorMessage.detail) {
+        setMessage(errorMessage.detail)
+      } else {
+        setMessage('Required fields are missing.')
+      }
+
+      return { doNotNavigate: true }
     }
   }
 
@@ -40,6 +49,7 @@ export default function Login() {
       <img className='full-img' src='https://res.cloudinary.com/dwgwkeccm/image/upload/v1697387895/Login_vncbws.png' />
       <div className='formContainer'>
         <Form title='Login' request={login} fields={fields} redirect='/celebrities/' />
+        {message && <Alert style={{ marginTop: '10px' }} variant={'warning'}>{message}</Alert>}
       </div>
     </main>
   )

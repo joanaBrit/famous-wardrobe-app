@@ -35,6 +35,7 @@ export default function CreateReview() {
 
   return (
     <>
+      <img className='full-img' src='https://res.cloudinary.com/dwgwkeccm/image/upload/v1697387895/Review_vudry8.png' />
       <div className='formContainer'>
         <Form title='Create Review' request={createReview} fields={fields} />
       </div>

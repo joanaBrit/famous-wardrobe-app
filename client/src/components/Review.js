@@ -3,16 +3,24 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import LoadingSpinner from './LoadingSpinner'
 import axiosAuth from '../utils/axios'
+import { tokenIsValid } from '../utils/auth'
 
 
 
 export default function Reviews() {
   const params = useParams()
+  const navigate = useNavigate()
   const [reviewData, setReviewData] = useState()
   const [celebrityName, setCelebrityName] = useState()
   const [error, setError] = useState()
 
+
   useEffect(() => {
+    if (!tokenIsValid('famous-access-token') && !tokenIsValid('famous-refresh-token')) {
+      navigate('/login')
+      return
+    }
+
     const celebrityId = params.id
     fetchReviews()
 
@@ -41,7 +49,7 @@ export default function Reviews() {
   return <>
     <div className='reviews-container'>
       {reviewData.length === 0
-        ? <NoReviewsBanner />
+        ? <NoReviewsBanner id={params.id} />
         : reviewData.map(reviewEntry => <ReviewCard data={reviewEntry} key={reviewEntry.id} />)}
     </div>
 
@@ -49,10 +57,12 @@ export default function Reviews() {
   </>
 }
 
-function NoReviewsBanner() {
+function NoReviewsBanner({ id }) {
+  const navigate = useNavigate()
+
   return <div className='jo-card no-review-banner'>
     <h4> There are no reviews! </h4>
-    <button>Add the first review</button>
+    <button onClick={() => navigate(`/celebrities/${id}/create-review`)} >Add the first review</button>
   </div>
 }
 

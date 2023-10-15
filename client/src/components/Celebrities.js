@@ -42,7 +42,7 @@ export default function Celebrities() {
     <section>
       <main>
         <section className='wrap-carousel' >
-          <Carousel>
+          <Carousel controls={false}>
             {celebritiesSplits.map((split, splitIndex) => (
               <Carousel.Item key={splitIndex}>
                 <div className='split-container'>
