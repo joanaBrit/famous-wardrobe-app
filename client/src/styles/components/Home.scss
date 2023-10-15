@@ -5,25 +5,40 @@ body {
   background-size: cover;
 }
 
+.text-container {
+  margin: auto;
+  max-width: 40rem;
+  backdrop-filter: blur(20px);
+  background-color: $theme-light-grey;
+  height: 10rem;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px 10px
+}
+
+.text-content {
+  padding: 10px;
+  color: $theme-text-light;
+}
 
 // ? Not Found Page
-
 .not-found {
   background-image: url('https://res.cloudinary.com/dwgwkeccm/image/upload/v1697121177/Project-4/pexels-ivan-samkov-7671166_x3c2jx.jpg');
   background-size: cover;
   min-height: 100vh;
 
   h1 {
-    color: white;
+    color: $theme-light;
   }
 }
 
+// ? Spinner
 .spinner {
   display: flex !important;
   flex-direction: row;
   justify-content: flex-start;
-  color: $theme-dark-grey;
+  color: $theme-primary;
   gap: 10px;
-  width: 3rem; 
+  width: 3rem;
   height: 3rem;
 }

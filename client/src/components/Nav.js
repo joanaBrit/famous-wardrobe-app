@@ -75,6 +75,6 @@ function getPageTitle(path) {
   } else if (subpaths[1] === 'login') {
     return 'Login'
   } else {
-    return 'Famous Wardrobe App'
+    return 'Famous Wardrobe'
   }
 }

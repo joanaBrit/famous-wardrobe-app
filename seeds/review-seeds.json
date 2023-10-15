@@ -8,5 +8,25 @@
     "celebrity": 10,
     "user": 1
   }
+},
+{
+  "model": "reviews.review",
+  "pk": 2,
+  "fields": {
+    "text": "I Love the whole outfit. So cool!",
+    "date": "2023-10-08",
+    "celebrity": 15,
+    "user": 3
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 2,
+  "fields": {
+    "text": "This jacket is amazing. I love this kind of style, can't wait until to see more celebrities outfits.",
+    "date": "2023-10-08",
+    "celebrity": 13,
+    "user": 2
+  }
 }
 ]

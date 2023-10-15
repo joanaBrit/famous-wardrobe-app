@@ -7,6 +7,8 @@
   .celebrity-photo {
     img {
       width: calc(50vw - 3rem);
+      min-height: 80vh;
+      object-fit: cover;
     }
   }
 

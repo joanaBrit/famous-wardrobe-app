@@ -15,7 +15,10 @@
 
 .carousel-indicators {
   border-radius: 3px;
-  background-color: $theme-light-grey;
+  background-color: transparent;
+  .button {
+    background-color: black;
+  }
 }
 
 .split-container {
@@ -29,7 +32,7 @@
   }
 
   .text-carousel {
-    color: #444;
+    color: $theme-text-grey;
     margin: 1rem;
   }
 
@@ -38,8 +41,8 @@
     gap: 5px;
 
     button {
-      background: #ffffff80;
-      color: #890000;
+      background-color: $theme-light-grey;
+      color: $theme-primary;
     }
   }
 
