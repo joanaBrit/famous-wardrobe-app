@@ -82,7 +82,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media (min-width: 768px) {
   .carousel {
     display: flex;
     align-items: center;
