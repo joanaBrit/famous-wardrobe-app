@@ -3,6 +3,10 @@
   background-color: $theme-light;
 }
 
+* {
+  font-family: $text-font;
+}
+
 .jo-card {
   background: #ffffff40;
   backdrop-filter: blur(40px);
@@ -15,8 +19,4 @@ h1,
 h2 {
   font-family: $title-font;
   font-weight: 500;
-}
-
-* {
-  font-family: $text-font;
 }

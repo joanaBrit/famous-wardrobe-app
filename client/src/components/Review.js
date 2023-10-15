@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import { tokenIsValid } from '../utils/auth'
 
 import LoadingSpinner from './LoadingSpinner'
 import axiosAuth from '../utils/axios'
-import { tokenIsValid } from '../utils/auth'
 
 
 
@@ -84,9 +84,9 @@ function ReviewCard(props) {
     try {
       const tokenString = localStorage.getItem('famous-access-token')
       if (!tokenString) return 0
-
       const [header, payload, signature] = tokenString.split('.')
       const decodedPayload = JSON.parse(atob(payload))
+
       return decodedPayload.user_id
 
     } catch (e) {

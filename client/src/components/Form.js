@@ -36,7 +36,6 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value })
-    // set errors to the starting point
   }
 
   async function handleSubmit(e) {

@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { tokenIsValid } from '../utils/auth'
 
 import Card from 'react-bootstrap/Card'
-import Spinner from 'react-bootstrap/Spinner'
-import { tokenIsValid } from '../utils/auth'
 import axiosAuth from '../utils/axios'
 import LoadingSpinner from './LoadingSpinner'
 
