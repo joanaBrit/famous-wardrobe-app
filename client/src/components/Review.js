@@ -11,7 +11,6 @@ export default function Reviews() {
   const params = useParams()
   const navigate = useNavigate()
   const [reviewData, setReviewData] = useState()
-  const [celebrityName, setCelebrityName] = useState()
   const [error, setError] = useState()
 
 
@@ -29,7 +28,6 @@ export default function Reviews() {
       console.log(response)
       if (response.status === 200) {
         setReviewData(response.data.reviews)
-        setCelebrityName(response.data.celebrity)
       } else {
         setError('Oops, try again!')
       }

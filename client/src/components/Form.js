@@ -42,10 +42,9 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
   async function handleSubmit(e) {
     e.preventDefault()
     const result = await request(formData)
-
+    const hasNoError = result === undefined || result.doNotNavigate === false
     // If redirect
-    if (redirect && !result.doNotNavigate) {
-      console.log('form is navigating', redirect, !result.doNotNavigate, redirect && !result.doNotNavigate)
+    if (redirect && hasNoError) {
       navigate(redirect)
     }
   }

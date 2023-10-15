@@ -32,7 +32,7 @@ export default function Garment() {
     navigate('/login')
   }
 
-  
+
   return (
     <div className='garment-details-board'>
       {celebrity ?
@@ -43,7 +43,7 @@ export default function Garment() {
           <div className='garments'>
             {celebrity.garments && celebrity.garments.map((garment) =>
               <div key={garment.id} className='display-garments' >
-                <Card className="bg-dark text-white style=max-width: 18rem" >
+                <Card className="bg-dark text-white" style={{ border: 0 }}>
                   <Card.Img src={garment.image} alt="Garment image" />
                   <Card.ImgOverlay className='garment-text'>
                     <h2>{garment.title}</h2>

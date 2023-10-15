@@ -24,7 +24,7 @@ export default function Nav() {
 
 
   return (
-    <>
+    <div style={{ padding: '1rem' }}>
       <nav className='nav-header'>
         <a className='nav-toggle' onClick={() => setShow(true)}>
           <span></span>
@@ -54,7 +54,8 @@ export default function Nav() {
           </nav>
         </Modal.Body>
       </Modal>
-    </>
+    </div>
+
   )
 }
 
