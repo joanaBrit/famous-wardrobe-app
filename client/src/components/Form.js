@@ -1,7 +1,5 @@
 import { useState, Fragment, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-
-import { getToken, setToken } from '../utils/auth'
 import { stateValues, fieldValues } from '../utils/Common'
 
 import Container from 'react-bootstrap/Container'
@@ -9,16 +7,10 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 
+
 export default function Form({ title, request, fields, redirect, onLoad }) {
 
-
-  // * Variable
-
   const navigate = useNavigate()
-
-
-  // * State
-
   const [formData, setFormData] = useState((stateValues(fields)))
   const [errors, setErrors] = useState()
 
@@ -73,6 +65,7 @@ export default function Form({ title, request, fields, redirect, onLoad }) {
     }
   }
 
+  
   return (
     <section>
       <Container>

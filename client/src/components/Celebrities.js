@@ -1,27 +1,11 @@
 import { useState, useEffect } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import axios from 'axios'
 import axiosAuth from '../utils/axios'
 import Carousel from 'react-bootstrap/Carousel'
-import Modal from 'react-bootstrap/Modal'
 
 
-//* Likes
-// async function likedCelebrity() {
-// const [likes, setlikes] = useState(0)
-// const [isCliked, setIsClicked] = useState()
-// const { id } = useParams()
-
-//   const response = await axiosAuth.patch(`/api/celebrities/${id}/`)
-
-//   if (isCliked) {
-//     // Like succeeded, update likes on UI to add 1
-//     setNumberOfLikes(likes + 1)
-//   } else if (response.status === 204) {
-//     setNumberOfLikes(numberOfLikes - 1)
-//   }
-// }
 
 export default function Celebrities() {
   const [celebrities, setcelebrities] = useState([])
@@ -39,6 +23,7 @@ export default function Celebrities() {
     getCelebritiesData()
   }, [])
 
+
   // * Carousel work displaying 3 images
 
   const splitCelebrities = 3
@@ -51,6 +36,7 @@ export default function Celebrities() {
     resultArray[splitIndex].push(item)
     return resultArray
   }, [])
+
 
   return (
     <section>
@@ -70,6 +56,7 @@ export default function Celebrities() {
     </section >
   )
 }
+
 
 function CelebrityCard({ data }) {
   const { id: celebrityId, name, year, coverImage, likes } = data
@@ -99,46 +86,37 @@ function CelebrityCard({ data }) {
   }
 
 
-  return <div className='display-celebrities jo-card' >
-    <div className='img-position'>
-
-      <div className='celebrity-image-container'>
-        <Link to={`/celebrities/${celebrityId}/garments`} >
-          <img alt={name} src={coverImage} />
-        </Link>
-        <a className='likes' onClick={addLikeToCelebrity}>
-          <img src="https://res.cloudinary.com/dwgwkeccm/image/upload/v1697319522/flames_laqehk.png" />
-        </a>
-        <div className={`likes-number ${numberShow ? 'show' : 'hide'}`} >
-          {numberOfLikes}
+  return (
+    <div className='display-celebrities jo-card' >
+      <div className='img-position'>
+        <div className='celebrity-image-container'>
+          <Link to={`/celebrities/${celebrityId}/garments`} >
+            <img alt={name} src={coverImage} />
+          </Link>
+          <a className='likes' onClick={addLikeToCelebrity}>
+            <img src="https://res.cloudinary.com/dwgwkeccm/image/upload/v1697319522/flames_laqehk.png" />
+          </a>
+          <div className={`likes-number ${numberShow ? 'show' : 'hide'}`} >
+            {numberOfLikes}
+          </div>
         </div>
-        <Modal
-          size="sm"
-          // show={numberShow}
-          // onHide={() => setNumberShow(false)}
-          aria-labelledby="example-modal-sizes-title-sm"
-        >
-
-        </Modal>
+        <div className='text-carousel'>
+          <h3>{name}</h3>
+          <p>{year}</p>
+        </div>
       </div>
-
-      <div className='text-carousel'>
-        <h3>{name}</h3>
-        <p>{year}</p>
+      <div className='action-buttons'>
+        <button
+          className='Review-btn btn-sm'
+          onClick={() => navigate(`/celebrities/${celebrityId}/create-review`)} >
+          Create Review
+        </button>
+        <button
+          className='Review-btn btn-sm'
+          onClick={() => navigate(`/celebrities/${celebrityId}/reviews`)} >
+          Show Reviews
+        </button>
       </div>
     </div>
-    <div className='action-buttons'>
-      <button
-        className='Review-btn btn-sm'
-        onClick={() => navigate(`/celebrities/${celebrityId}/create-review`)} >
-        Create Review
-      </button>
-      <button
-        className='Review-btn btn-sm'
-        onClick={() => navigate(`/celebrities/${celebrityId}/reviews`)} >
-        Show Reviews
-      </button>
-    </div>
-
-  </div>
+  )
 }

@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
-import axios from 'axios'
 import Card from 'react-bootstrap/Card'
 import Spinner from 'react-bootstrap/Spinner'
 import { tokenIsValid } from '../utils/auth'
 import axiosAuth from '../utils/axios'
+import LoadingSpinner from './LoadingSpinner'
 
 
 
@@ -13,16 +13,13 @@ export default function Garment() {
   const navigate = useNavigate()
   const params = useParams()
   const [celebrity, setCelebrity] = useState()
-  // const [garments, setGarments] = useState([])
 
   useEffect(() => {
     async function getData() {
       try {
         const celebritiesResponse = await axiosAuth.get(`/api/celebrities/${params.id}/`)
-        // const garmentsResponse = await axiosAuth.get('/api/garments/')
 
         setCelebrity(celebritiesResponse.data)
-        // setGarments(garmentsResponse.data)
 
       } catch (error) {
         console.error(error)
@@ -35,6 +32,7 @@ export default function Garment() {
     navigate('/login')
   }
 
+  
   return (
     <div className='garment-details-board'>
       {celebrity ?
@@ -50,7 +48,7 @@ export default function Garment() {
                   <Card.ImgOverlay className='garment-text'>
                     <h2>{garment.title}</h2>
                     <p>{garment.brand}</p>
-                    <p>{garment.price}</p>
+                    <p>£ {garment.price}</p>
                   </Card.ImgOverlay>
                 </Card>
               </div>
@@ -58,9 +56,7 @@ export default function Garment() {
           </div>
         </>
         :
-        <Spinner className='spinner' style={{ marginTop: '3rem', marginLeft: '3rem' }} animation="border" role="status">
-          <strong>0</strong>
-        </Spinner>
+        <LoadingSpinner />
       }
     </div>
   )
