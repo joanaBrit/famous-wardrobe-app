@@ -41,11 +41,12 @@ export default function SingleReview({ user }) {
     }
   }
 
-  
+
 
   return (
     <section>
       <main>
+        <img className='full-img' src='https://res.cloudinary.com/dwgwkeccm/image/upload/v1697387895/Review_vudry8.png' />
         {review ?
           <Container className='single-review-container' fluid>
             <Row>

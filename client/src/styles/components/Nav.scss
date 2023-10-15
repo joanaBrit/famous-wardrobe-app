@@ -4,13 +4,16 @@
   align-items: center;
   margin: 10px;
   padding: 7px;
-  background: #ffffff80;
+  background-color: $theme-light-grey;
   backdrop-filter: blur(30px);
   border-radius: 5px;
+  z-index: 999;
+  position: relative;
 
   h1 {
     margin: 0;
     font-size: 1.75rem;
+    color: $theme-dark-grey;
   }
 }
 
@@ -28,7 +31,7 @@
   span {
     display: block;
     height: 20%;
-    background: #890000;
+    background-color: $theme-primary;
     border-radius: 10px;
     transition: 0.5s;
   }
@@ -40,20 +43,21 @@
   height: 100%;
   box-shadow: 3px 0 5px rgba(0, 0, 0, 0.2);
 
-  .modal-content{
+  .modal-content {
     width: max-content;
-    background: #ffffff80;
+    background-color: $theme-light-grey;
     backdrop-filter: blur(10px);
   }
 
   .modal-header {
     background: #FDEC9E;
+
     button {
       position: absolute;
       top: 10px;
       right: 10px;
 
-      &:hover{
+      &:hover {
         transform: unset;
         background-color: unset;
         box-shadow: none;
@@ -61,8 +65,8 @@
     }
   }
 
-  .modal-body{
-    nav{
+  .modal-body {
+    nav {
       display: grid;
       gap: 5px;
       padding: 1rem 2rem;
@@ -70,8 +74,8 @@
       span {
         cursor: pointer;
       }
-  
-      a{
+
+      a {
         color: #fff;
         text-decoration: none;
         font-size: 1.5rem;
@@ -80,7 +84,6 @@
   }
 }
 
-.nav-modal .modal-dialog{
+.nav-modal .modal-dialog {
   margin: 75px 10px;
 }
-

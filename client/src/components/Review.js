@@ -105,36 +105,41 @@ function ReviewCard(props) {
   const isReviewMadeByLoggedInUser = getLoggedInUserId() === userId
 
 
-  return <div className="jo-card review-card">
-    <div className='content'>
-      <div className='review-title-bar'>
-        <h3>{title}</h3>
-        {isReviewMadeByLoggedInUser && <a onClick={toggleEditMenu}>
-          <img src='https://res.cloudinary.com/dwgwkeccm/image/upload/v1697303216/menu-dots_kj03vd.svg' />
-        </a>}
+  return (
+    <main>
+      <img className='full-img' src='https://res.cloudinary.com/dwgwkeccm/image/upload/v1697388876/Reviews2_ihwqyo.png' />
+      <div className="jo-card review-card">
+        <div className='content'>
+          <div className='review-title-bar'>
+            <h3>{title}</h3>
+            {isReviewMadeByLoggedInUser && <a onClick={toggleEditMenu}>
+              <img src='https://res.cloudinary.com/dwgwkeccm/image/upload/v1697303216/menu-dots_kj03vd.svg' />
+            </a>}
+          </div>
+          <p>{text}</p>
+        </div>
+
+        <div className='bottom-banner'>
+          <span>
+            <a onClick={likedReview} style={{ cursor: 'pointer', marginRight: '5px' }}>
+              {numberOfLikes === 0 ? '🤍' : '❤️'}
+            </a>
+            {numberOfLikes} Likes</span>
+          <span>{date}</span>
+        </div>
+        {optionMenu && <div className='review-options'>
+          <a onClick={handleDelete} href="#">
+            <img src={'https://res.cloudinary.com/dwgwkeccm/image/upload/v1697113505/Project-4/disposal_1_gsafke.png'} alt={'trash'} />
+          </a>
+          <Link to={`/review/${reviewId}/update`}>
+            <img className='update' src={'https://res.cloudinary.com/dwgwkeccm/image/upload/v1697113413/Project-4/pencil_qssfhn.png'} alt={'pen'} />
+          </Link>
+          <a onClick={toggleEditMenu} href="#">
+            <img src="https://res.cloudinary.com/dwgwkeccm/image/upload/v1697304007/arrow-circle-right_fyjxqj.svg" />
+          </a>
+
+        </div>}
       </div>
-      <p>{text}</p>
-    </div>
-
-    <div className='bottom-banner'>
-      <span>
-        <a onClick={likedReview} style={{ cursor: 'pointer', marginRight: '5px' }}>
-          {numberOfLikes === 0 ? '🤍' : '❤️'}
-        </a>
-        {numberOfLikes} Likes</span>
-      <span>{date}</span>
-    </div>
-    {optionMenu && <div className='review-options'>
-      <a onClick={handleDelete} href="#">
-        <img src={'https://res.cloudinary.com/dwgwkeccm/image/upload/v1697113505/Project-4/disposal_1_gsafke.png'} alt={'trash'} />
-      </a>
-      <Link to={`/review/${reviewId}/update`}>
-        <img className='update' src={'https://res.cloudinary.com/dwgwkeccm/image/upload/v1697113413/Project-4/pencil_qssfhn.png'} alt={'pen'} />
-      </Link>
-      <a onClick={toggleEditMenu} href="#">
-        <img src="https://res.cloudinary.com/dwgwkeccm/image/upload/v1697304007/arrow-circle-right_fyjxqj.svg" />
-      </a>
-
-    </div>}
-  </div>
+    </main>
+  )
 }

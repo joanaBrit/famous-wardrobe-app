@@ -1,10 +1,11 @@
 #root {
   min-height: 100vh;
+  background-color: $theme-light;
 }
 
 .jo-card {
   background: #ffffff40;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(40px);
   border-radius: 10px;
   box-shadow: 0px 0px 10px #00000020;
   padding: 15px;

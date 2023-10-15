@@ -31,8 +31,11 @@ export default function Register() {
 
 
   return (
-    <div className='formContainer'>
-      <Form title="Register" request={register} fields={fields} redirect="/login" />
-    </div>
+    <main>
+      <img className='full-img' src='https://res.cloudinary.com/dwgwkeccm/image/upload/v1697385445/Project-4/Frame_2_sxl9q1.png' />
+      <div className='formContainer'>
+        <Form title="Register" request={register} fields={fields} redirect="/login" />
+      </div>
+    </main>
   )
 }

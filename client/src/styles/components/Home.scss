@@ -1,8 +1,17 @@
-// ? Home Page
+//* Home Page
 body {
   margin: 0;
-  background-image: url('../../../public/neom-3qBi6HWZMeg-unsplash.jpg');
-  background-size: cover;
+  padding: 0;
+  overflow: hidden;
+}
+
+.full-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
 }
 
 .text-container {
@@ -13,26 +22,33 @@ body {
   height: 10rem;
   border: 0;
   border-radius: 5px;
-  padding: 5px 10px
+  padding: 5px 10px;
+  margin-top: 200px;
 }
 
 .text-content {
   padding: 10px;
-  color: $theme-text-light;
+  color: $theme-secondary;
 }
 
-// ? Not Found Page
+//* Not Found Page
 .not-found {
   background-image: url('https://res.cloudinary.com/dwgwkeccm/image/upload/v1697121177/Project-4/pexels-ivan-samkov-7671166_x3c2jx.jpg');
   background-size: cover;
   min-height: 100vh;
 
   h1 {
-    color: $theme-light;
+    color: $theme-text-light;
+    backdrop-filter: blur(20px);
+    border: 0;
+    text-align: center;
+    padding: 50px;
+    margin: auto;
+    max-width: 40rem;
   }
 }
 
-// ? Spinner
+//* Spinner
 .spinner {
   display: flex !important;
   flex-direction: row;
