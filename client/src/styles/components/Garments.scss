@@ -30,3 +30,14 @@
     }
   }
 }
+
+
+@media (min-width: 768px) {
+  .garment-details-board {
+    grid-template-columns: 1fr;
+
+    .celebrity-photo img {
+      width: calc(100vw - 4rem)
+    }
+  }
+}
